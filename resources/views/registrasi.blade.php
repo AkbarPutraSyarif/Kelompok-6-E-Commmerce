@@ -8,22 +8,32 @@
 </head>
 <body>
     <div class="border">
-        <form action="" method= "post">
+        <form action="" method="post">
+            @csrf
             <div class="head"><b>Registrasi</b></div>
 
             <div class="input-text">
                 <label for="Email">Email:</label>
-                <input type="text" name="Email"  placeholder="Email">
+                <input type="text" name="Email" placeholder="Email">
+                @if ($errors->has('Email'))
+                    <div class="error-message">{{ $errors->first('Email') }}</div>
+                @endif
             </div>
 
             <div class="input-password">
-                <label for="Passsword">Password: </label>
+                <label for="password">Password: </label>
                 <input type="password" name="password" placeholder="password">
+                @if ($errors->has('password'))
+                    <div class="error-message">{{ $errors->first('password') }}</div>
+                @endif
             </div>
 
             <div class="input-check-password">
                 <label for="check-password">Check Password: </label>
                 <input type="password" name="check-password" placeholder="check-password">
+                @if ($errors->has('check-password'))
+                    <div class="error-message">{{ $errors->first('check-password') }}</div>
+                @endif
             </div>
 
             <div class="input-login">
