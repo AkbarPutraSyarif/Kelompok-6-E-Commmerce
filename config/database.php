@@ -89,6 +89,7 @@ return [
 
             'password' => env('DB_PASSWORD', '123456'),
 
+
             'charset' => env('DB_CHARSET', 'utf8'),
             'prefix' => '',
             'prefix_indexes' => true,
