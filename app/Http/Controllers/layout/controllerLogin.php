@@ -18,11 +18,12 @@ class controllerLogin extends Controller
 
     public function registerPost(Request $request){
         $request->validate([
-            'Email' => 'required|min:3|unique:register,Email',
+            'Email' => 'required|email|min:3|unique:register,Email',
             'password' => 'required',
             'check-password' => 'required|same:password'
         ],[
             'Email.required'=>'Harus diisi !!!',
+            'Email.email' => 'Harus berbentuk email', 
             'Email.min'=>'Minimal 3',
             'password.required' => 'Harus diisi !!!',
             'check-password.required' => 'Harus diisi !!!',
