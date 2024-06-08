@@ -24,6 +24,7 @@ class controllerLogin extends Controller
             'password' => 'required',
             'check-password' => 'required|same:password'
         ],[
+
             'Email.required'=>'Masukkan email yang Anda miliki',
             'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
             'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
@@ -49,6 +50,7 @@ class controllerLogin extends Controller
             'Email' => 'required|email|min:3|Email',
             'password' => 'required',
         ],[
+
             'Email.required'=>'Masukkan email yang Anda miliki',
             'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
             'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
@@ -59,13 +61,12 @@ class controllerLogin extends Controller
             'password' => $request->input('password'),
         ];
 
-        // Custom authentication logic
         $user = layout::where('Email', $credentials['Email'])->first();
         if ($user && Hash::check($credentials['password'], $user->password)) {
             Auth::login($user);
-            return redirect('/beranda');
+            return redirect('/home');
         } else {
-            return redirect()->back()->withErrors(['Email atau password salah']);
+            return redirect()->back()->withErrors(['Email atau Password Anda Salah']);
         }
     }
 }
