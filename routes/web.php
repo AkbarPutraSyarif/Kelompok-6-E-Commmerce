@@ -23,3 +23,4 @@ Route::get('/beranda', [HomeController::class, 'index'])->name('home');
 
 
 
+
