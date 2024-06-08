@@ -37,3 +37,9 @@ Route::get('/beranda', [HomeController::class, 'index'])->name('home');
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> a0dfb3a (testing beranda)

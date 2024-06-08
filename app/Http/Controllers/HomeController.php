@@ -5,16 +5,29 @@ namespace App\Http\Controllers;
 <<<<<<< HEAD
 use App\Models\Product;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Cookie;
 =======
 use Illuminate\Http\Request;
 >>>>>>> e616fbe (Mencoba membuat beranda)
+=======
+use App\Models\Product;
+>>>>>>> a0dfb3a (testing beranda)
 
 class HomeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    // $products = Product::with('category')->get();
+
     public function index()
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         $products = Product::all();
 
@@ -59,9 +72,14 @@ class HomeController extends Controller
             ['name' => 'Teh Pucuk', 'harga' => 3500, 'image' => 'Barang2.jpg'],
             ['name' => 'Oreo', 'harga' => 7500, 'image' => 'Barang3.jpg'],
             
+=======
+        $data = [
+            'title' => 'Dashboard',
+            'product' => Product::all()->count()
+>>>>>>> a0dfb3a (testing beranda)
         ];
 
-        return view('home', compact('products'));
+        return view('home', $data);
     }
 }
 >>>>>>> e616fbe (Mencoba membuat beranda)
