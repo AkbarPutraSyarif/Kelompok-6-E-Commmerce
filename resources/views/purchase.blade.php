@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - E-commerce</title>
+    <title>Purchase - {{ $product['name'] }}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
@@ -15,8 +15,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Products</a>
@@ -27,28 +27,23 @@
             </ul>
         </div>
     </nav>
-    <header class="jumbotron text-center">
-        <h1 class="display-4">Welcome to Our E-commerce Site</h1>
-        <p class="lead">Find the best products here.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Shop Now</a>
-    </header>
-    <main class="container">
-        <section class="products row">
-            @foreach($products as $product)
-                <div class="product col-md-4">
-                    <div class="card mb-4">
-                        <img src="{{ asset('img/' . $product['image']) }}" class="card-img-top" alt="{{ $product['name'] }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $product['name'] }}</h5>
-                            <p class="card-text">Harga: Rp {{ number_format($product['harga'], 0, ',', '.') }}</p>
-                            <a href="{{ route('purchase', 1) }}" class="btn btn-primary">Buy Now</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </section>
-    </main>
-    <footer class="bg-light text-center py-4">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ asset('img/' . $product['image']) }}" class="img-fluid" alt="{{ $product['name'] }}">
+            </div>
+            <div class="col-md-6">
+                <h2>{{ $product['name'] }}</h2>
+                <p>Harga: Rp {{ number_format($product['harga'], 0, ',', '.') }}</p>
+                <form action="/order" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $product['id'] }}">
+                    <button type="submit" class="btn btn-success">Confirm Purchase</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-light text-center py-4 mt-5">
         <p>&copy; 2024 E-commerce. All rights reserved.</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
