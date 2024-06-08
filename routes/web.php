@@ -19,3 +19,5 @@ Route::post('/registrasi',[controllerLogin::class,'registerPost']);
 Route::get('/logout', [controllerLogin::class, 'logout']);
 
 
+
+
