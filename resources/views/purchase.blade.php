@@ -34,7 +34,7 @@
             </div>
             <div class="col-md-6">
                 <h2>{{ $product['name'] }}</h2>
-                <p>Harga: Rp {{ number_format($product['harga'], 0, ',', '.') }}</p>
+                <p>Harga : Rp {{ number_format($product['harga'], 0, ',', '.') }}</p>
                 <form action="/order" method="POST">
                     @csrf
                     <input type="hidden" name="product_id" value="{{ $product['id'] }}">
