@@ -24,12 +24,12 @@ class controllerLogin extends Controller
             'password' => 'required',
             'check-password' => 'required|same:password'
         ],[
-            'Email.required'=>'Harus diisi !!!',
-            'Email.min'=>'Minimal 3',
-            'Email.email'=> 'Harus format email!',
-            'password.required' => 'Harus diisi !!!',
-            'check-password.required' => 'Harus diisi !!!',
-            'check.password.same' => 'Harus Sama !!!'
+            'Email.required'=>'Masukkan email yang Anda miliki',
+            'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
+            'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
+            'password.required' => 'Masukkan kata sandi yang Anda miliki',
+            'check-password.required' => 'Masukkan juga kata sandi Anda disini',
+            'check.password.same' => 'Kata sandi dan konfirmasi Anda tidak sama'
         ]);
 
         $data =[
@@ -49,10 +49,10 @@ class controllerLogin extends Controller
             'Email' => 'required|email|min:3|Email',
             'password' => 'required',
         ],[
-            'Email.required'=>'Harus diisi !!!',
-            'Email.min'=>'Minimal 3 karakter',
-            'Email.email'=> 'Harus format email!',
-            'password.required' => 'Harus diisi !!!',
+            'Email.required'=>'Masukkan email yang Anda miliki',
+            'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
+            'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
+            'password.required' => 'Masukkan kata sandi yang Anda',
         ]);
         $credentials = [
             'Email' => $request->input('Email'),
