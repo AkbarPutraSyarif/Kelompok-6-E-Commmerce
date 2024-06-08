@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Cookie;
+=======
+use Illuminate\Http\Request;
+>>>>>>> e616fbe (Mencoba membuat beranda)
 
 class HomeController extends Controller
 {
     public function index()
     {
+<<<<<<< HEAD
         $products = Product::all();
 
         return view('home', compact('products'));
@@ -47,3 +52,16 @@ class HomeController extends Controller
         return redirect()->route('home')->with('success_message', 'Purchase successful!');
     }
 }
+=======
+        // Contoh data produk, bisa digantikan dengan data dari database
+        $products = [
+            ['name' => 'Indomie', 'harga' => 3000, 'image' => 'Barang1.jpg'],
+            ['name' => 'Teh Pucuk', 'harga' => 3500, 'image' => 'Barang2.jpg'],
+            ['name' => 'Oreo', 'harga' => 7500, 'image' => 'Barang3.jpg'],
+            
+        ];
+
+        return view('home', compact('products'));
+    }
+}
+>>>>>>> e616fbe (Mencoba membuat beranda)

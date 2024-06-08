@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
+<<<<<<< HEAD
     @if (session()->has('success_message'))
     <div class="alert alert-success" role="alert">
         {{ session()->get('success_message') }}
@@ -23,6 +24,8 @@
     </div>
     @endif
 
+=======
+>>>>>>> e616fbe (Mencoba membuat beranda)
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">E-commerce</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,9 +42,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+<<<<<<< HEAD
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Logout</a>
                 </li>
+=======
+>>>>>>> e616fbe (Mencoba membuat beranda)
             </ul>
         </div>
     </nav>
@@ -53,6 +59,7 @@
     <main class="container">
         <section class="products row">
             @foreach($products as $product)
+<<<<<<< HEAD
                 <div class="product col-md-2"> 
                     <div class="card mb-4">
                         <img src="{{ asset('img/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">
@@ -60,6 +67,15 @@
                             <h5 class="card-title">{{ $product->name }}</h5>
                             <p class="card-text">Harga : Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
                             <a href="{{ route('purchase', $product->id) }}" class="btn btn-primary">Beli Sekarang</a>
+=======
+                <div class="product col-md-4">
+                    <div class="card mb-4">
+                        <img src="{{ asset('img/' . $product['image']) }}" class="card-img-top" alt="{{ $product['name'] }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $product['name'] }}</h5>
+                            <p class="card-text">Harga: ${{ $product['harga'] }}</p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+>>>>>>> e616fbe (Mencoba membuat beranda)
                         </div>
                     </div>
                 </div>
