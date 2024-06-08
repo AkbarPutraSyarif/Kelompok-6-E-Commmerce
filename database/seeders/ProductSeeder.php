@@ -15,6 +15,7 @@ class ProductSeeder extends Seeder
     public function run()
     {
         Product::create([
+<<<<<<< HEAD
             'nama' => 'Indomie',
             'harga' => 3000,
             'stok' => 100,
@@ -179,12 +180,24 @@ class ProductSeeder extends Seeder
             'stock' => 100,
             'expired_date' => '2025-01-01',
 
+=======
+            'name' => 'Indomie',
+            'harga' => 3000,
+            'image' => 'Barang1.jpg',
+        ]);
+
+        Product::create([
+            'name' => 'Teh Pucuk',
+            'harga' => 3500,
+            'image' => 'TehPucukHD.jpg',
+>>>>>>> 80a0e84 (Membuat Beranda dan Database Product)
         ]);
 
         Product::create([
             'name' => 'Oreo',
             'harga' => 7500,
             'image' => 'Barang3.jpg',
+<<<<<<< HEAD
             'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
             'stock' => 100,
             'expired_date' => '2025-01-01',
@@ -195,3 +208,90 @@ class ProductSeeder extends Seeder
         // Tambahkan produk lain jika diperlukan
     }
 }
+=======
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+        Product::create([
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+        ]);
+
+        // Tambahkan produk lain jika diperlukan
+    }
+}
+>>>>>>> 80a0e84 (Membuat Beranda dan Database Product)

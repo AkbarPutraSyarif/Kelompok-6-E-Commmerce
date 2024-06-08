@@ -35,6 +35,7 @@
             <div class="col-md-6">
                 <h2>{{ $product['name'] }}</h2>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <p>Harga : Rp {{ number_format($product['harga'], 0, ',', '.') }}</p>
                 <form action="{{ route('checkout.store') }}" method="POST">
                     @csrf
@@ -42,6 +43,9 @@
                     <button type="submit" class="btn btn-primary">Konfirmasi Pembelian</button>
 =======
                 <p>Harga: Rp {{ number_format($product['harga'], 0, ',', '.') }}</p>
+=======
+                <p>Harga : Rp {{ number_format($product['harga'], 0, ',', '.') }}</p>
+>>>>>>> 80a0e84 (Membuat Beranda dan Database Product)
                 <form action="/order" method="POST">
                     @csrf
                     <input type="hidden" name="product_id" value="{{ $product['id'] }}">

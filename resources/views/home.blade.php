@@ -60,6 +60,7 @@
         <section class="products row">
             @foreach($products as $product)
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <div class="product col-md-2"> 
                     <div class="card mb-4">
                         <img src="{{ asset('img/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">
@@ -69,9 +70,13 @@
                             <a href="{{ route('purchase', $product->id) }}" class="btn btn-primary">Beli Sekarang</a>
 =======
                 <div class="product col-md-4">
+=======
+                <div class="product col-md-2"> <!-- Mengubah col-md-4 menjadi col-md-3 untuk 4 kolom -->
+>>>>>>> 80a0e84 (Membuat Beranda dan Database Product)
                     <div class="card mb-4">
-                        <img src="{{ asset('img/' . $product['image']) }}" class="card-img-top" alt="{{ $product['name'] }}">
+                        <img src="{{ asset('img/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">
                         <div class="card-body">
+<<<<<<< HEAD
                             <h5 class="card-title">{{ $product['name'] }}</h5>
 <<<<<<< HEAD
                             <p class="card-text">Harga: ${{ $product['harga'] }}</p>
@@ -81,6 +86,11 @@
                             <p class="card-text">Harga: Rp {{ number_format($product['harga'], 0, ',', '.') }}</p>
                             <a href="{{ route('purchase', 1) }}" class="btn btn-primary">Buy Now</a>
 >>>>>>> 55fe1ff (Membuat Direct namun belum jadi)
+=======
+                            <h5 class="card-title">{{ $product->name }}</h5>
+                            <p class="card-text">Harga : Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
+                            <a href="{{ route('purchase', $product->id) }}" class="btn btn-primary">Beli Sekarang</a>
+>>>>>>> 80a0e84 (Membuat Beranda dan Database Product)
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 80a0e84 (Membuat Beranda dan Database Product)
 use App\Models\Product;
 use Illuminate\Http\Request;
 <<<<<<< HEAD
@@ -23,6 +26,7 @@ class HomeController extends Controller
 {
     public function index()
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -83,26 +87,20 @@ class HomeController extends Controller
 >>>>>>> 55fe1ff (Membuat Direct namun belum jadi)
         ];
         
+=======
+        // Mengambil semua produk dari database
+        $products = Product::all();
+>>>>>>> 80a0e84 (Membuat Beranda dan Database Product)
 
         return view('home', compact('products'));
     }
+
     public function purchase($id)
     {
-        // Dapatkan detail produk berdasarkan ID
-        $products = [
-            ['id' => 1,'name' => 'Indomie', 'harga' => 3000, 'image' => 'Barang1.jpg'],
-            ['id' => 2,'name' => 'Teh Pucuk', 'harga' => 3500, 'image' => 'TehPucukHD.jpg'],
-            ['id' => 3,'name' => 'Oreo', 'harga' => 7500, 'image' => 'Barang3.jpg'],
-        ];
-    
-        if (!array_key_exists($id, $products)) {
-            abort(404);
-        }
-    
-        $product = $products[$id];
-    
+        // Mengambil detail produk berdasarkan ID
+        $product = Product::findOrFail($id);
+
         return view('purchase', compact('product'));
     }
-    
 }
 >>>>>>> e616fbe (Mencoba membuat beranda)
