@@ -24,12 +24,12 @@ class controllerLogin extends Controller
             'password' => 'required',
             'check-password' => 'required|same:password'
         ],[
-            'Email.required'=>'Harus diisi !!!',
-            'Email.min'=>'Minimal 3',
-            'Email.email'=> 'Harus format email!',
-            'password.required' => 'Harus diisi !!!',
-            'check-password.required' => 'Harus diisi !!!',
-            'check.password.same' => 'Harus Sama !!!'
+            'Email.required'=>'Required Field',
+            'Email.min'=>'Minimum of 3 Character',
+            'Email.email'=> 'Enter a valid e-mail address',
+            'password.required' => 'Required Field',
+            'check-password.required' => 'Required Field',
+            'check.password.same' => 'Required Field'
         ]);
 
         $data =[
@@ -49,23 +49,22 @@ class controllerLogin extends Controller
             'Email' => 'required|email|min:3|Email',
             'password' => 'required',
         ],[
-            'Email.required'=>'Harus diisi !!!',
-            'Email.min'=>'Minimal 3 karakter',
-            'Email.email'=> 'Harus format email!',
-            'password.required' => 'Harus diisi !!!',
+            'Email.required'=>'Required Field',
+            'Email.min'=>'Minimum of 3 Character',
+            'Email.email'=> 'Enter a valid e-mail address',
+            'password.required' => 'Required Field',
         ]);
         $credentials = [
             'Email' => $request->input('Email'),
             'password' => $request->input('password'),
         ];
 
-        // Custom authentication logic
         $user = layout::where('Email', $credentials['Email'])->first();
         if ($user && Hash::check($credentials['password'], $user->password)) {
             Auth::login($user);
-            return redirect('/beranda');
+            return redirect('/home');
         } else {
-            return redirect()->back()->withErrors(['Email atau password salah']);
+            return redirect()->back()->withErrors(['Email atau Password Anda Salah']);
         }
     }
 }
