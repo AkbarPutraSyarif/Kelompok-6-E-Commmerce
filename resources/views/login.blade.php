@@ -22,8 +22,8 @@
             </div>
 
             <div class="input-registrasi">
-                <label for="Registrasi">Belum punya akun ?</label>
-                <a href="/registrasi">registrasi</a>
+                <label for="Registrasi">Need an Account?</label>
+                <a href="/registrasi">Register</a>
             </div>
 
             <div class="submit">
