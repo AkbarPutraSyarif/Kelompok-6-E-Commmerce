@@ -73,9 +73,14 @@
                         <img src="{{ asset('img/' . $product['image']) }}" class="card-img-top" alt="{{ $product['name'] }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ $product['name'] }}</h5>
+<<<<<<< HEAD
                             <p class="card-text">Harga: ${{ $product['harga'] }}</p>
                             <a href="#" class="btn btn-primary">Buy Now</a>
 >>>>>>> e616fbe (Mencoba membuat beranda)
+=======
+                            <p class="card-text">Harga: Rp {{ number_format($product['harga'], 0, ',', '.') }}</p>
+                            <a href="{{ route('purchase', 1) }}" class="btn btn-primary">Buy Now</a>
+>>>>>>> 55fe1ff (Membuat Direct namun belum jadi)
                         </div>
                     </div>
                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Models\Product;
 use Illuminate\Http\Request;
 <<<<<<< HEAD
@@ -14,19 +15,15 @@ use Illuminate\Http\Request;
 =======
 use App\Models\Product;
 >>>>>>> a0dfb3a (testing beranda)
+=======
+use Illuminate\Http\Request;
+>>>>>>> 55fe1ff (Membuat Direct namun belum jadi)
 
 class HomeController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    // $products = Product::with('category')->get();
-
     public function index()
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         $products = Product::all();
@@ -77,9 +74,35 @@ class HomeController extends Controller
             'title' => 'Dashboard',
             'product' => Product::all()->count()
 >>>>>>> a0dfb3a (testing beranda)
+=======
+        // Contoh data produk, bisa digantikan dengan data dari database
+        $products = [
+            ['id' => 1, 'name' => 'Indomie', 'harga' => 3000, 'image' => 'Barang1.jpg'],
+            ['id' => 2, 'name' => 'Teh Pucuk', 'harga' => 3500, 'image' => 'TehPucukHD.jpg'],
+            ['id' => 3, 'name' => 'Oreo', 'harga' => 7500, 'image' => 'Barang3.jpg'],
+>>>>>>> 55fe1ff (Membuat Direct namun belum jadi)
         ];
+        
 
-        return view('home', $data);
+        return view('home', compact('products'));
     }
+    public function purchase($id)
+    {
+        // Dapatkan detail produk berdasarkan ID
+        $products = [
+            ['id' => 1,'name' => 'Indomie', 'harga' => 3000, 'image' => 'Barang1.jpg'],
+            ['id' => 2,'name' => 'Teh Pucuk', 'harga' => 3500, 'image' => 'TehPucukHD.jpg'],
+            ['id' => 3,'name' => 'Oreo', 'harga' => 7500, 'image' => 'Barang3.jpg'],
+        ];
+    
+        if (!array_key_exists($id, $products)) {
+            abort(404);
+        }
+    
+        $product = $products[$id];
+    
+        return view('purchase', compact('product'));
+    }
+    
 }
 >>>>>>> e616fbe (Mencoba membuat beranda)

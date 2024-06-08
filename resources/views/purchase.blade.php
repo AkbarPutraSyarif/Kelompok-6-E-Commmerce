@@ -34,11 +34,19 @@
             </div>
             <div class="col-md-6">
                 <h2>{{ $product['name'] }}</h2>
+<<<<<<< HEAD
                 <p>Harga : Rp {{ number_format($product['harga'], 0, ',', '.') }}</p>
                 <form action="{{ route('checkout.store') }}" method="POST">
                     @csrf
                     <input type="hidden" name="product_id" value="{{ $product['id'] }}">
                     <button type="submit" class="btn btn-primary">Konfirmasi Pembelian</button>
+=======
+                <p>Harga: Rp {{ number_format($product['harga'], 0, ',', '.') }}</p>
+                <form action="/order" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $product['id'] }}">
+                    <button type="submit" class="btn btn-success">Confirm Purchase</button>
+>>>>>>> 55fe1ff (Membuat Direct namun belum jadi)
                 </form>
             </div>
         </div>
@@ -50,4 +58,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 55fe1ff (Membuat Direct namun belum jadi)
