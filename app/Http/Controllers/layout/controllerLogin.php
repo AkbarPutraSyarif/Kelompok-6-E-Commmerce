@@ -49,10 +49,10 @@ class controllerLogin extends Controller
             'Email' => 'required|email|min:3|Email',
             'password' => 'required',
         ],[
-            'Email.required'=>'Required Field',
-            'Email.min'=>'Minimum of 3 Character',
-            'Email.email'=> 'Enter a valid e-mail address',
-            'password.required' => 'Required Field',
+            'Email.required'=>'Masukkan email yang Anda miliki',
+            'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
+            'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
+            'password.required' => 'Masukkan kata sandi yang Anda',
         ]);
         $credentials = [
             'Email' => $request->input('Email'),
