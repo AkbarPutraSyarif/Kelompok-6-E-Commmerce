@@ -16,3 +16,5 @@ Route::get('/registrasi',[controllerLogin::class,'register']);
 Route::post('/registrasi',[controllerLogin::class,'registerPost']);
 
 
+
+
