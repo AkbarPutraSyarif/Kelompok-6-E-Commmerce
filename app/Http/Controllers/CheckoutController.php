@@ -7,9 +7,13 @@ use App\Models\Register;
 use App\Models\Product;
 use Illuminate\Support\Facades\Validator;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Cookie;
 =======
 >>>>>>> 5f9760f (Nambahin checkout product dan layout product)
+=======
+use Illuminate\Support\Facades\Cookie;
+>>>>>>> 99bc52f (pembuatan prototipe beranda dari hans ega hizkia beserta fitur dan db buatan)
 
 class CheckoutController extends Controller
 {
@@ -35,6 +39,9 @@ class CheckoutController extends Controller
         $product = Product::findOrFail($request->input('product_id'));
         $quantity = $request->input('quantity');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 99bc52f (pembuatan prototipe beranda dari hans ega hizkia beserta fitur dan db buatan)
         $user = Register::where('Email', $request->input('email'))->firstOrFail();
         $totalPrice = $product->harga * $quantity;
 
@@ -59,6 +66,9 @@ class CheckoutController extends Controller
             'success_message' => 'Purchase successful!',
             'user_balance' => $user->saldo
         ]);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 99bc52f (pembuatan prototipe beranda dari hans ega hizkia beserta fitur dan db buatan)
     }
 }

@@ -31,9 +31,22 @@
     @if (session()->has('success_message'))
     <div class="alert alert-success" role="alert">
         {{ session()->get('success_message') }}
+        @if (session()->has('user_balance'))
+        <p>Your remaining balance is: Rp {{ number_format(session()->get('user_balance'), 0, ',', '.') }}</p>
+        @endif
     </div>
     @endif
+<<<<<<< HEAD
 >>>>>>> 5f9760f (Nambahin checkout product dan layout product)
+=======
+
+    @if (Cookie::has('user_balance'))
+    <div class="alert alert-info" role="alert">
+        <p>Your remaining balance from cookie is: Rp {{ number_format(Cookie::get('user_balance'), 0, ',', '.') }}</p>
+    </div>
+    @endif
+
+>>>>>>> 99bc52f (pembuatan prototipe beranda dari hans ega hizkia beserta fitur dan db buatan)
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">E-commerce</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

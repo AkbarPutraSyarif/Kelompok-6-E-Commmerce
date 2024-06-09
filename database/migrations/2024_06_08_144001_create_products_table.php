@@ -15,7 +15,11 @@ return new class extends Migration
             $table->id();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->string('nama');
+=======
+            $table->string('name');
+>>>>>>> 99bc52f (pembuatan prototipe beranda dari hans ega hizkia beserta fitur dan db buatan)
             $table->integer('harga');
             $table->string('image');
             $table->text('description');

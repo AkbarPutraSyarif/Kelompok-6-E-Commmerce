@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Cookie;
 =======
@@ -21,6 +22,10 @@ use App\Models\Product;
 =======
 use Illuminate\Http\Request;
 >>>>>>> 55fe1ff (Membuat Direct namun belum jadi)
+=======
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cookie;
+>>>>>>> 99bc52f (pembuatan prototipe beranda dari hans ega hizkia beserta fitur dan db buatan)
 
 class HomeController extends Controller
 {
@@ -120,13 +125,13 @@ class HomeController extends Controller
         $product = Product::findOrFail($request->input('product_id'));
         $quantity = $request->input('quantity');
 
-        if ($product->stok < $quantity) {
+        if ($product->stock < $quantity) {
             return redirect()->route('purchase', $product->id)
                 ->withErrors(['quantity' => 'Not enough stock available'])
                 ->withInput();
         }
 
-        $product->stok -= $quantity;
+        $product->stock -= $quantity;
         $product->save();
 
         return redirect()->route('home')->with('success_message', 'Purchase successful!');
