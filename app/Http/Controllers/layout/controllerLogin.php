@@ -69,4 +69,9 @@ class controllerLogin extends Controller
             return redirect()->back()->withErrors(['Email atau Password Anda Salah']);
         }
     }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('/')->with('Berhasil Logout');
+    }
 }
