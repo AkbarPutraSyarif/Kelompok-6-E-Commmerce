@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->string('nama');
             $table->integer('harga');
             $table->string('image');
@@ -27,6 +28,13 @@ return new class extends Migration
             $table->integer('harga');
             $table->string('image');
 >>>>>>> 80a0e84 (Membuat Beranda dan Database Product)
+=======
+            $table->string('nama');
+            $table->integer('harga');
+            $table->string('image');
+            $table->integer('stok');
+            $table->text('deskripsi');
+>>>>>>> 5f9760f (Nambahin checkout product dan layout product)
             $table->timestamps();
         });
     }
@@ -39,7 +47,11 @@ return new class extends Migration
         Schema::dropIfExists('products');
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 };
 =======
 };
 >>>>>>> 80a0e84 (Membuat Beranda dan Database Product)
+=======
+};
+>>>>>>> 5f9760f (Nambahin checkout product dan layout product)

@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Register;
 use App\Models\Product;
 use Illuminate\Support\Facades\Validator;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Cookie;
+=======
+>>>>>>> 5f9760f (Nambahin checkout product dan layout product)
 
 class CheckoutController extends Controller
 {
@@ -31,6 +34,7 @@ class CheckoutController extends Controller
 
         $product = Product::findOrFail($request->input('product_id'));
         $quantity = $request->input('quantity');
+<<<<<<< HEAD
         $user = Register::where('Email', $request->input('email'))->firstOrFail();
         $totalPrice = $product->harga * $quantity;
 
@@ -55,5 +59,6 @@ class CheckoutController extends Controller
             'success_message' => 'Purchase successful!',
             'user_balance' => $user->saldo
         ]);
+
     }
 }

@@ -30,6 +30,7 @@ class HomeController extends Controller
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $products = Product::all();
 
         return view('home', compact('products'));
@@ -89,6 +90,8 @@ class HomeController extends Controller
         
 =======
         // Mengambil semua produk dari database
+=======
+>>>>>>> 5f9760f (Nambahin checkout product dan layout product)
         $products = Product::all();
 >>>>>>> 80a0e84 (Membuat Beranda dan Database Product)
 
@@ -97,10 +100,36 @@ class HomeController extends Controller
 
     public function purchase($id)
     {
-        // Mengambil detail produk berdasarkan ID
         $product = Product::findOrFail($id);
 
         return view('purchase', compact('product'));
     }
+<<<<<<< HEAD
 }
 >>>>>>> e616fbe (Mencoba membuat beranda)
+=======
+
+    public function confirmPurchase(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email|exists:register,Email',
+            'quantity' => 'required|integer|min:1',
+            'product_id' => 'required|exists:products,id',
+        ]);
+
+        $product = Product::findOrFail($request->input('product_id'));
+        $quantity = $request->input('quantity');
+
+        if ($product->stok < $quantity) {
+            return redirect()->route('purchase', $product->id)
+                ->withErrors(['quantity' => 'Not enough stock available'])
+                ->withInput();
+        }
+
+        $product->stok -= $quantity;
+        $product->save();
+
+        return redirect()->route('home')->with('success_message', 'Purchase successful!');
+    }
+}
+>>>>>>> 5f9760f (Nambahin checkout product dan layout product)
