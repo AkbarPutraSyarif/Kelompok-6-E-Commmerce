@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="border">
-        <form action="" method= "post">
+        <form action="{{ url('loginPost') }}" method= "post">
             @csrf
             <div class="head"><b>Login</b></div>
             <div class="input-text">
@@ -28,8 +28,8 @@
             </div>
 
             <div class="input-registrasi">
-                <label for="Registrasi">Belum punya akun ?</label>
-                <a href="/registrasi">registrasi</a>
+                <label for="Registrasi">Need an Account?</label>
+                <a href="/registrasi">Register</a>
             </div>
 
             <div class="submit">

@@ -10,7 +10,7 @@
     <div class="border">
         <form action="" method="post">
             @csrf
-            <div class="head"><b>Registrasi</b></div>
+            <div class="head"><b>Registration</b></div>
 
             <div class="input-text">
                 <label for="Email">Email:</label>
@@ -37,7 +37,7 @@
             </div>
 
             <div class="input-login">
-                <label for="login">Sudah ada akun ?</label>
+                <label for="login">Already Have an Account?</label>
                 <a href="/">Login</a>
             </div>
 

@@ -7,6 +7,8 @@ use App\Models\layout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cookie;
 
 class controllerLogin extends Controller
 {
@@ -22,14 +24,14 @@ class controllerLogin extends Controller
         $request->validate([
             'Email' => 'required|email|min:3|unique:register,Email',
             'password' => 'required',
-            'check-password' => 'required|same:password'
+            'check-password' => 'required|same:password',
         ],[
-            'Email.required'=>'Harus diisi !!!',
-            'Email.min'=>'Minimal 3',
-            'Email.email'=> 'Harus format email!',
-            'password.required' => 'Harus diisi !!!',
-            'check-password.required' => 'Harus diisi !!!',
-            'check.password.same' => 'Harus Sama !!!'
+            'Email.required'=>'Required Field',
+            'Email.min'=>'Minimum of 3 Character',
+            'Email.email'=> 'Enter a valid e-mail address',
+            'password.required' => 'Required Field',
+            'check-password.required' => 'Required Field',
+            'check.password.same' => 'Required Field'
         ]);
 
         $data =[
@@ -49,10 +51,11 @@ class controllerLogin extends Controller
             'Email' => 'required|email|min:3|Email',
             'password' => 'required',
         ],[
-            'Email.required'=>'Harus diisi !!!',
-            'Email.min'=>'Minimal 3 karakter',
-            'Email.email'=> 'Harus format email!',
-            'password.required' => 'Harus diisi !!!',
+            'Email.required'=>'Masukkan email yang Anda miliki',
+            'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
+            'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
+            'password.required' => 'Masukkan kata sandi yang Anda',
+
         ]);
         $credentials = [
             'Email' => $request->input('Email'),
@@ -62,14 +65,16 @@ class controllerLogin extends Controller
         $user = layout::where('Email', $credentials['Email'])->first();
         if ($user && Hash::check($credentials['password'], $user->password)) {
             Auth::login($user);
-            return redirect('/beranda');
+
+            return redirect('/home');
         } else {
-            return redirect('/')->with('Gagal', 'password atau email salah');
+            return redirect()->back()->withErrors(['Email atau Password Anda Salah']);
+
         }
     }
-
     public function logout(){
         Auth::logout();
         return redirect('/')->with('Berhasil Logout');
     }
 }
+
