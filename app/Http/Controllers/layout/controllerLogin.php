@@ -69,10 +69,10 @@ class controllerLogin extends Controller
             Auth::login($user);
             return redirect('/home');
         } else {
-            return redirect()->back()->withErrors(['Email atau Password Anda Salah']);
+
+            return redirect('/')->with('Gagal', 'password atau email salah');
         }
     }
-
 
     public function logout(){
         Auth::logout();
