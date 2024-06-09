@@ -106,4 +106,3 @@ class controllerLogin extends Controller
     }
 
 }
-

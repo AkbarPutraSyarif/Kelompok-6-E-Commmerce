@@ -51,11 +51,17 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Logout</a>
                 </li>
 =======
 >>>>>>> e616fbe (Mencoba membuat beranda)
+=======
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+>>>>>>> eae389e (test1)
             </ul>
         </div>
     </nav>
