@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="border">
-        <form action="" method= "post">
+        <form action="{{ url('loginPost') }}" method= "post">
             @csrf
             <div class="head"><b>Login</b></div>
             <div class="input-text">

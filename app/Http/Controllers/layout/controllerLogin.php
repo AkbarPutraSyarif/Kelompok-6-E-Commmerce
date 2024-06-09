@@ -55,6 +55,7 @@ class controllerLogin extends Controller
             'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
             'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
             'password.required' => 'Masukkan kata sandi yang Anda',
+
         ]);
         $credentials = [
             'Email' => $request->input('Email'),
@@ -64,6 +65,7 @@ class controllerLogin extends Controller
         $user = layout::where('Email', $credentials['Email'])->first();
         if ($user && Hash::check($credentials['password'], $user->password)) {
             Auth::login($user);
+
             return redirect('/home');
         } else {
             return redirect()->back()->withErrors(['Email atau Password Anda Salah']);
@@ -75,3 +77,4 @@ class controllerLogin extends Controller
         return redirect('/')->with('Berhasil Logout');
     }
 }
+
