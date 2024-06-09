@@ -73,4 +73,3 @@ class controllerLogin extends Controller
         return redirect('/')->with('Berhasil Logout');
     }
 }
-
