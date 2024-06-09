@@ -42,16 +42,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Logout</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href={{ route('topup.update') }}>Top Up</a>
-                </li>
             </ul>
         </div>
     </nav>
-    <header class="text-center">
+
+    <header class="jumbotron text-center">
         <h1 class="display-4">Welcome to Our E-commerce Site</h1>
-        <p class="lead">Find the best products here.</p> 
-        <a class="btn btn-primary btn-lg" href={{ route('products.all') }} role="button">Shop Now</a>
+        <p class="lead">Find the best products here.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Shop Now</a>
     </header>
     <footer class="bg-light text-center py-4">
         <p>&copy; 2024 E-commerce. All rights reserved.</p>
