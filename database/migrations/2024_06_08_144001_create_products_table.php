@@ -16,8 +16,11 @@ return new class extends Migration
             $table->string('nama');
             $table->integer('harga');
             $table->string('image');
-            $table->integer('stok');
-            $table->text('deskripsi');
+
+            $table->text('description');
+            $table->integer('stock');
+            $table->date('expired_date');
+
             $table->timestamps();
         });
     }
