@@ -1062,7 +1062,10 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/99b4255194912044b75ab72329f8c19e6345720e",
                 "reference": "99b4255194912044b75ab72329f8c19e6345720e",
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5797d59 (test)
                 "shasum": ""
             },
             "require": {
@@ -1254,8 +1257,12 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+<<<<<<< HEAD
 
             "time": "2024-05-28T18:16:41+00:00"
+=======
+            "time": "2024-06-04T13:45:55+00:00"
+>>>>>>> 5797d59 (test)
         },
         {
             "name": "laravel/prompts",

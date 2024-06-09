@@ -25,9 +25,7 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.s
 
 
 Route::post('/registrasi',[controllerLogin::class,'registerPost']);
-
 Route::get('/logout', [controllerLogin::class, 'logout']);
-
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/purchase/{id}', [HomeController::class, 'purchase'])->name('purchase');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');

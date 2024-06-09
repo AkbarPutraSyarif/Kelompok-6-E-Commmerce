@@ -69,6 +69,9 @@
             @foreach($products as $product)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5797d59 (test)
                 <div class="product col-md-2"> 
                     <div class="card mb-4">
                         <img src="{{ asset('img/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">

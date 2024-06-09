@@ -100,7 +100,6 @@ class controllerLogin extends Controller
 >>>>>>> a0dfb3a (testing beranda)
         }
     }
-
     public function logout(){
         Auth::logout();
         return redirect('/')->with('Berhasil Logout');

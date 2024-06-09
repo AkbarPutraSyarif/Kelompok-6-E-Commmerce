@@ -32,9 +32,15 @@ return new class extends Migration
             $table->string('nama');
             $table->integer('harga');
             $table->string('image');
+<<<<<<< HEAD
             $table->integer('stok');
             $table->text('deskripsi');
 >>>>>>> 5f9760f (Nambahin checkout product dan layout product)
+=======
+            $table->text('description');
+            $table->integer('stock');
+            $table->date('expired_date');
+>>>>>>> 5797d59 (test)
             $table->timestamps();
         });
     }
