@@ -15,102 +15,190 @@ class ProductSeeder extends Seeder
     public function run()
     {
         Product::create([
-            'name' => 'Indomie',
+            'nama' => 'Indomie',
             'harga' => 3000,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang1.jpg',
         ]);
 
         Product::create([
-            'name' => 'Teh Pucuk',
+            'nama' => 'Teh Pucuk',
             'harga' => 3500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
             'image' => 'TehPucukHD.jpg',
         ]);
 
         Product::create([
-            'name' => 'Oreo',
+            'nama' => 'Oreo',
             'harga' => 7500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
         ]);
         Product::create([
-            'name' => 'Oreo',
+            'nama' => 'Indomie',
+            'harga' => 3000,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
+            'image' => 'Barang1.jpg',
+        ]);
+
+        Product::create([
+            'nama' => 'Teh Pucuk',
+            'harga' => 3500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
+            'image' => 'TehPucukHD.jpg',
+        ]);
+
+        Product::create([
+            'nama' => 'Oreo',
             'harga' => 7500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
         ]);
         Product::create([
-            'name' => 'Oreo',
+            'nama' => 'Indomie',
+            'harga' => 3000,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
+            'image' => 'Barang1.jpg',
+        ]);
+
+        Product::create([
+            'nama' => 'Teh Pucuk',
+            'harga' => 3500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
+            'image' => 'TehPucukHD.jpg',
+        ]);
+
+        Product::create([
+            'nama' => 'Oreo',
             'harga' => 7500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
         ]);
         Product::create([
-            'name' => 'Oreo',
+            'nama' => 'Indomie',
+            'harga' => 3000,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
+            'image' => 'Barang1.jpg',
+        ]);
+
+        Product::create([
+            'nama' => 'Teh Pucuk',
+            'harga' => 3500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
+            'image' => 'TehPucukHD.jpg',
+        ]);
+
+        Product::create([
+            'nama' => 'Oreo',
             'harga' => 7500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
         ]);
         Product::create([
-            'name' => 'Oreo',
+            'nama' => 'Indomie',
+            'harga' => 3000,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
+            'image' => 'Barang1.jpg',
+        ]);
+
+        Product::create([
+            'nama' => 'Teh Pucuk',
+            'harga' => 3500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
+            'image' => 'TehPucukHD.jpg',
+        ]);
+
+        Product::create([
+            'nama' => 'Oreo',
             'harga' => 7500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
         ]);
         Product::create([
-            'name' => 'Oreo',
+            'nama' => 'Indomie',
+            'harga' => 3000,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
+            'image' => 'Barang1.jpg',
+        ]);
+
+        Product::create([
+            'nama' => 'Teh Pucuk',
+            'harga' => 3500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
+            'image' => 'TehPucukHD.jpg',
+        ]);
+
+        Product::create([
+            'nama' => 'Oreo',
             'harga' => 7500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
         ]);
         Product::create([
-            'name' => 'Oreo',
+            'nama' => 'Indomie',
+            'harga' => 3000,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
+            'image' => 'Barang1.jpg',
+        ]);
+
+        Product::create([
+            'nama' => 'Teh Pucuk',
+            'harga' => 3500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
+            'image' => 'TehPucukHD.jpg',
+        ]);
+
+        Product::create([
+            'nama' => 'Oreo',
             'harga' => 7500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
         ]);
         Product::create([
-            'name' => 'Oreo',
-            'harga' => 7500,
-            'image' => 'Barang3.jpg',
+            'nama' => 'Indomie',
+            'harga' => 3000,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
+            'image' => 'Barang1.jpg',
         ]);
+
         Product::create([
-            'name' => 'Oreo',
-            'harga' => 7500,
-            'image' => 'Barang3.jpg',
+            'nama' => 'Teh Pucuk',
+            'harga' => 3500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
+            'image' => 'TehPucukHD.jpg',
         ]);
+
         Product::create([
-            'name' => 'Oreo',
+            'nama' => 'Oreo',
             'harga' => 7500,
+            'stok' => 100,
+            'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
         ]);
-        Product::create([
-            'name' => 'Oreo',
-            'harga' => 7500,
-            'image' => 'Barang3.jpg',
-        ]);
-        Product::create([
-            'name' => 'Oreo',
-            'harga' => 7500,
-            'image' => 'Barang3.jpg',
-        ]);
-        Product::create([
-            'name' => 'Oreo',
-            'harga' => 7500,
-            'image' => 'Barang3.jpg',
-        ]);
-        Product::create([
-            'name' => 'Oreo',
-            'harga' => 7500,
-            'image' => 'Barang3.jpg',
-        ]);
-        Product::create([
-            'name' => 'Oreo',
-            'harga' => 7500,
-            'image' => 'Barang3.jpg',
-        ]);
-        Product::create([
-            'name' => 'Oreo',
-            'harga' => 7500,
-            'image' => 'Barang3.jpg',
-        ]);
-        Product::create([
-            'name' => 'Oreo',
-            'harga' => 7500,
-            'image' => 'Barang3.jpg',
-        ]);
+       
 
         // Tambahkan produk lain jika diperlukan
     }

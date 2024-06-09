@@ -2,32 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\Register;
+use App\Models\Product;
+use Illuminate\Support\Facades\Validator;
 
-class HomeController extends Controller
+class CheckoutController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
-
-        return view('home', compact('products'));
+        return view('checkout');
     }
 
-    public function purchase($id)
+    public function store(Request $request)
     {
-        $product = Product::findOrFail($id);
-
-        return view('purchase', compact('product'));
-    }
-
-    public function confirmPurchase(Request $request)
-    {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'email' => 'required|email|exists:register,Email',
             'quantity' => 'required|integer|min:1',
-            'product_id' => 'required|exists:products,id',
+            'product_id' => 'required|exists:products,id', // Validate product ID exists
         ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('checkout.index')
+                ->withErrors($validator)
+                ->withInput();
+        }
 
         $product = Product::findOrFail($request->input('product_id'));
         $quantity = $request->input('quantity');
