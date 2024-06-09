@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cookie;
 
 class HomeController extends Controller
 {
@@ -32,13 +34,13 @@ class HomeController extends Controller
         $product = Product::findOrFail($request->input('product_id'));
         $quantity = $request->input('quantity');
 
-        if ($product->stok < $quantity) {
+        if ($product->stock < $quantity) {
             return redirect()->route('purchase', $product->id)
                 ->withErrors(['quantity' => 'Not enough stock available'])
                 ->withInput();
         }
 
-        $product->stok -= $quantity;
+        $product->stock -= $quantity;
         $product->save();
 
         return redirect()->route('home')->with('success_message', 'Purchase successful!');

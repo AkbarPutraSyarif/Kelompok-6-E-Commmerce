@@ -7,6 +7,8 @@ use App\Models\layout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cookie;
 
 class controllerLogin extends Controller
 {
