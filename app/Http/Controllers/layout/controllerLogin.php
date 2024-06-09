@@ -59,13 +59,17 @@ class controllerLogin extends Controller
             'password' => $request->input('password'),
         ];
 
-        // Custom authentication logic
         $user = layout::where('Email', $credentials['Email'])->first();
         if ($user && Hash::check($credentials['password'], $user->password)) {
             Auth::login($user);
             return redirect('/beranda');
         } else {
-            return redirect()->back()->withErrors(['Email atau password salah']);
+            return redirect('/')->with('Gagal', 'password atau email salah');
         }
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('/')->with('Berhasil Logout');
     }
 }

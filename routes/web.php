@@ -16,5 +16,6 @@ Route::get('/',[controllerLogin::class,'login']);
 Route::post('/', [controllerLogin::class, 'loginPost']) ->name('login.post');
 Route::get('/registrasi',[controllerLogin::class,'register']);
 Route::post('/registrasi',[controllerLogin::class,'registerPost']);
+Route::get('/logout', [controllerLogin::class, 'logout']);
 
 
