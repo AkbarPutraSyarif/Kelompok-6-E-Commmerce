@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->integer('harga');
             $table->string('image');
+            $table->text('description');
+            $table->integer('stock');
+            $table->date('expired_date');
             $table->timestamps();
         });
     }
