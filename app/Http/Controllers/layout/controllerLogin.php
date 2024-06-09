@@ -25,12 +25,12 @@ class controllerLogin extends Controller
             'check-password' => 'required|same:password'
         ],[
 
-            'Email.required'=>'Masukkan email yang Anda miliki',
-            'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
-            'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
-            'password.required' => 'Masukkan kata sandi yang Anda miliki',
-            'check-password.required' => 'Masukkan juga kata sandi Anda disini',
-            'check.password.same' => 'Kata sandi dan konfirmasi Anda tidak sama'
+            'Email.required'=>'Required field',
+            'Email.min'=>'Minimum of 3 Character',
+            'Email.email'=> 'Enter a valid e-mail address',
+            'password.required' => 'Required field',
+            'check-password.required' => 'Required field',
+            'check.password.same' => 'Required field'
         ]);
 
         $data =[
@@ -51,10 +51,10 @@ class controllerLogin extends Controller
             'password' => 'required',
         ],[
 
-            'Email.required'=>'Masukkan email yang Anda miliki',
-            'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
-            'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
-            'password.required' => 'Masukkan kata sandi yang Anda',
+            'Email.required'=>'Required field',
+            'Email.min'=>'Minimum of 3 Character',
+            'Email.email'=> 'Enter a valid e-mail address',
+            'password.required' => 'Required field',
         ]);
         $credentials = [
             'Email' => $request->input('Email'),
@@ -64,9 +64,39 @@ class controllerLogin extends Controller
         $user = layout::where('Email', $credentials['Email'])->first();
         if ($user && Hash::check($credentials['password'], $user->password)) {
             Auth::login($user);
+
+            // Check if the user is an admin
+            if ($credentials['Email'] === 'Admin@gmail.com' && $credentials['password'] === '123456') {
+                return redirect('/admin');
+            }
+
             return redirect('/home');
         } else {
-            return redirect()->back()->withErrors(['Email atau Password Anda Salah']);
+            return redirect()->back()->withErrors(['Invalid Email or Password']);
         }
+    }
+
+    public function adminLogin(){
+        return view('adminLogin');
+    }
+
+    public function adminDashboard(){
+        return view('admin.dashboard');
+    }
+
+    public function addProduct(Request $request){
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'description' => 'required|string',
+        ]);
+
+        Product::create([
+            'name' => $request->input('name'),
+            'price' => $request->input('price'),
+            'description' => $request->input('description')
+        ]);
+
+        return redirect('/admin')->with('success', 'Product added successfully');
     }
 }
