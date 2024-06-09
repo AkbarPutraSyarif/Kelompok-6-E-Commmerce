@@ -20,6 +20,9 @@ class ProductSeeder extends Seeder
             'stok' => 100,
             'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang1.jpg',
+            'description' => 'Mie Instan',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
         ]);
 
         Product::create([
@@ -28,6 +31,9 @@ class ProductSeeder extends Seeder
             'stok' => 100,
             'deskripsi' => 'Belum ada deskripsi',
             'image' => 'TehPucukHD.jpg',
+            'description' => 'Teh Berkualitas dari alam',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
         ]);
 
         Product::create([
@@ -36,21 +42,31 @@ class ProductSeeder extends Seeder
             'stok' => 100,
             'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
+            'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
         ]);
         Product::create([
-            'nama' => 'Indomie',
-            'harga' => 3000,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'Barang1.jpg',
+
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+            'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
+
         ]);
 
         Product::create([
-            'nama' => 'Teh Pucuk',
-            'harga' => 3500,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'TehPucukHD.jpg',
+
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+            'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
+
+
         ]);
 
         Product::create([
@@ -59,21 +75,31 @@ class ProductSeeder extends Seeder
             'stok' => 100,
             'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
+            'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
         ]);
         Product::create([
-            'nama' => 'Indomie',
-            'harga' => 3000,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'Barang1.jpg',
+
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+            'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
+
         ]);
 
         Product::create([
-            'nama' => 'Teh Pucuk',
-            'harga' => 3500,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'TehPucukHD.jpg',
+
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+            'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
+
+
         ]);
 
         Product::create([
@@ -82,21 +108,31 @@ class ProductSeeder extends Seeder
             'stok' => 100,
             'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
+            'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
         ]);
         Product::create([
-            'nama' => 'Indomie',
-            'harga' => 3000,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'Barang1.jpg',
+
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+            'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
+
         ]);
 
         Product::create([
-            'nama' => 'Teh Pucuk',
-            'harga' => 3500,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'TehPucukHD.jpg',
+
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+            'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
+
+
         ]);
 
         Product::create([
@@ -105,98 +141,54 @@ class ProductSeeder extends Seeder
             'stok' => 100,
             'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
+            'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
         ]);
         Product::create([
-            'nama' => 'Indomie',
-            'harga' => 3000,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'Barang1.jpg',
+
+            'name' => 'Oreo',
+            'harga' => 7500,
+            'image' => 'Barang3.jpg',
+            'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
+
         ]);
 
         Product::create([
-            'nama' => 'Teh Pucuk',
-            'harga' => 3500,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'TehPucukHD.jpg',
-        ]);
 
-        Product::create([
-            'nama' => 'Oreo',
+            'name' => 'Oreo',
+
             'harga' => 7500,
             'stok' => 100,
             'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
-        ]);
-        Product::create([
-            'nama' => 'Indomie',
-            'harga' => 3000,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'Barang1.jpg',
+            'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
+
         ]);
 
         Product::create([
-            'nama' => 'Teh Pucuk',
-            'harga' => 3500,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'TehPucukHD.jpg',
-        ]);
 
-        Product::create([
-            'nama' => 'Oreo',
+            'name' => 'Oreo',
             'harga' => 7500,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
-        ]);
-        Product::create([
-            'nama' => 'Indomie',
-            'harga' => 3000,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'Barang1.jpg',
+            'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
+
         ]);
 
         Product::create([
-            'nama' => 'Teh Pucuk',
-            'harga' => 3500,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'TehPucukHD.jpg',
-        ]);
-
-        Product::create([
-            'nama' => 'Oreo',
+            'name' => 'Oreo',
             'harga' => 7500,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
             'image' => 'Barang3.jpg',
-        ]);
-        Product::create([
-            'nama' => 'Indomie',
-            'harga' => 3000,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'Barang1.jpg',
-        ]);
+            'description' => 'Oreo is the trade name of a type of biscuit produced by Nabisco, first made in 1912.',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
 
-        Product::create([
-            'nama' => 'Teh Pucuk',
-            'harga' => 3500,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'TehPucukHD.jpg',
-        ]);
-
-        Product::create([
-            'nama' => 'Oreo',
-            'harga' => 7500,
-            'stok' => 100,
-            'deskripsi' => 'Belum ada deskripsi',
-            'image' => 'Barang3.jpg',
         ]);
        
 

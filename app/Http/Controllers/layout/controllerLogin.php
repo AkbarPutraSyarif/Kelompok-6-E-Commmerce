@@ -7,6 +7,8 @@ use App\Models\layout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cookie;
 
 class controllerLogin extends Controller
 {
@@ -22,15 +24,17 @@ class controllerLogin extends Controller
         $request->validate([
             'Email' => 'required|email|min:3|unique:register,Email',
             'password' => 'required',
-            'check-password' => 'required|same:password'
+            'check-password' => 'required|same:password',
         ],[
 
             'Email.required'=>'Required field',
-            'Email.min'=>'Minimum of 3 Character',
-            'Email.email'=> 'Enter a valid e-mail address',
+
+            'Email.min'=>'minimum of 3 character',
+            'Email.email'=> 'invalid email',
             'password.required' => 'Required field',
             'check-password.required' => 'Required field',
-            'check.password.same' => 'Required field'
+            'check.password.same' => 'invalid password or email',
+
         ]);
 
         $data =[
@@ -76,27 +80,9 @@ class controllerLogin extends Controller
         }
     }
 
-    public function adminLogin(){
-        return view('adminLogin');
-    }
-
-    public function adminDashboard(){
-        return view('admin.dashboard');
-    }
-
-    public function addProduct(Request $request){
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'price' => 'required|numeric',
-            'description' => 'required|string',
-        ]);
-
-        Product::create([
-            'name' => $request->input('name'),
-            'price' => $request->input('price'),
-            'description' => $request->input('description')
-        ]);
-
-        return redirect('/admin')->with('success', 'Product added successfully');
+    public function logout(){
+        Auth::logout();
+        return redirect('/')->with('Berhasil Logout');
     }
 }
+
