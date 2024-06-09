@@ -8,9 +8,17 @@ use App\Http\Controllers\Admin\Login;
 use App\Http\Controllers\Admin\ProductController;
 
 
+// Route::get('/', function () {
+//     return view('login');
+// });
+
+// Route::get('/registrasi', function () {
+//     return view('registrasi');
+// });
+
 
 Route::get('/',[controllerLogin::class,'login']);
-Route::post('/', [controllerLogin::class, 'loginPost']) ->name('login.post');
+Route::post('/', [controllerLogin::class, 'loginPost']) ->name('loginPost');
 Route::get('/registrasi',[controllerLogin::class,'register']);
 Route::post('/registrasi',[controllerLogin::class,'registerPost']);
 Route::get('/logout', [controllerLogin::class, 'logout']);
@@ -24,6 +32,7 @@ Route::delete('admin/deleteProduct/{id}', [ProductController::class, 'delete'])-
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/purchase/{id}', [HomeController::class, 'purchase'])->name('purchase');
+
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 Route::get('/products', [HomeController::class, 'showAllProducts'])->name('products.all');

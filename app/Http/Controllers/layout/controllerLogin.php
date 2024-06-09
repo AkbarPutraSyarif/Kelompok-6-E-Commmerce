@@ -7,8 +7,6 @@ use App\Models\layout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Cookie;
 
 class controllerLogin extends Controller
 {
@@ -32,6 +30,7 @@ class controllerLogin extends Controller
             'password.required' => 'Required Field',
             'check-password.required' => 'Required Field',
             'check.password.same' => 'Required Field'
+
         ]);
 
         $data =[
@@ -76,5 +75,6 @@ class controllerLogin extends Controller
         Auth::logout();
         return redirect('/')->with('Berhasil Logout');
     }
+
 }
 
