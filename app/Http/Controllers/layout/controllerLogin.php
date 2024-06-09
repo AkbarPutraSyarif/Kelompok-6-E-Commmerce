@@ -5,6 +5,8 @@ namespace App\Http\Controllers\layout;
 use App\Http\Controllers\Controller;
 use App\Models\layout;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class controllerLogin extends Controller
 {
@@ -18,15 +20,17 @@ class controllerLogin extends Controller
 
     public function registerPost(Request $request){
         $request->validate([
-            'Email' => 'required|min:3|unique:register,Email',
+            'Email' => 'required|email|min:3|unique:register,Email',
             'password' => 'required',
             'check-password' => 'required|same:password'
         ],[
-            'Email.required'=>'Harus diisi !!!',
-            'Email.min'=>'Minimal 3',
-            'password.required' => 'Harus diisi !!!',
-            'check-password.required' => 'Harus diisi !!!',
-            'check.password.same' => 'Harus Sama !!!'
+
+            'Email.required'=>'Masukkan email yang Anda miliki',
+            'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
+            'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
+            'password.required' => 'Masukkan kata sandi yang Anda miliki',
+            'check-password.required' => 'Masukkan juga kata sandi Anda disini',
+            'check.password.same' => 'Kata sandi dan konfirmasi Anda tidak sama'
         ]);
 
         $data =[
@@ -39,5 +43,30 @@ class controllerLogin extends Controller
 
         return redirect('/');
 
+    }
+
+    public function loginPost(Request $request){
+        $request->validate([
+            'Email' => 'required|email|min:3|Email',
+            'password' => 'required',
+        ],[
+
+            'Email.required'=>'Masukkan email yang Anda miliki',
+            'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
+            'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
+            'password.required' => 'Masukkan kata sandi yang Anda',
+        ]);
+        $credentials = [
+            'Email' => $request->input('Email'),
+            'password' => $request->input('password'),
+        ];
+
+        $user = layout::where('Email', $credentials['Email'])->first();
+        if ($user && Hash::check($credentials['password'], $user->password)) {
+            Auth::login($user);
+            return redirect('/home');
+        } else {
+            return redirect()->back()->withErrors(['Email atau Password Anda Salah']);
+        }
     }
 }
