@@ -22,7 +22,7 @@ class controllerLogin extends Controller
         $request->validate([
             'Email' => 'required|email|min:3|unique:register,Email',
             'password' => 'required',
-            'check-password' => 'required|same:password'
+            'check-password' => 'required|same:password',
         ],[
             'Email.required'=>'Required Field',
             'Email.min'=>'Minimum of 3 Character',
@@ -68,9 +68,9 @@ class controllerLogin extends Controller
 
         }
     }
-
     public function logout(){
         Auth::logout();
         return redirect('/')->with('Berhasil Logout');
     }
 }
+

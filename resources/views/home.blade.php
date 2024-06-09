@@ -40,7 +40,7 @@
     <main class="container">
         <section class="products row">
             @foreach($products as $product)
-                <div class="product col-md-2"> <!-- Mengubah col-md-4 menjadi col-md-3 untuk 4 kolom -->
+                <div class="product col-md-2"> 
                     <div class="card mb-4">
                         <img src="{{ asset('img/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">
                         <div class="card-body">
