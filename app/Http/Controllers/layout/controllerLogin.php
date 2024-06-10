@@ -27,14 +27,13 @@ class controllerLogin extends Controller
             'check-password' => 'required|same:password',
         ],[
 
-            'Email.required'=>'Required field',
 
-            'Email.min'=>'minimum of 3 character',
-            'Email.email'=> 'invalid email',
-            'password.required' => 'Required field',
-            'check-password.required' => 'Required field',
-            'check.password.same' => 'invalid password or email',
-
+            'Email.required'=>'Masukkan email yang Anda miliki',
+            'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
+            'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
+            'password.required' => 'Masukkan kata sandi yang Anda miliki',
+            'check-password.required' => 'Masukkan juga kata sandi Anda disini',
+            'check.password.same' => 'Kata sandi dan konfirmasi Anda tidak sama'
         ]);
 
         $data =[
@@ -55,10 +54,10 @@ class controllerLogin extends Controller
             'password' => 'required',
         ],[
 
-            'Email.required'=>'Required field',
-            'Email.min'=>'Minimum of 3 Character',
-            'Email.email'=> 'Enter a valid e-mail address',
-            'password.required' => 'Required field',
+            'Email.required'=>'Masukkan email yang Anda miliki',
+            'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
+            'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
+            'password.required' => 'Masukkan kata sandi yang Anda',
         ]);
         $credentials = [
             'Email' => $request->input('Email'),
@@ -68,21 +67,17 @@ class controllerLogin extends Controller
         $user = layout::where('Email', $credentials['Email'])->first();
         if ($user && Hash::check($credentials['password'], $user->password)) {
             Auth::login($user);
-
-            // Check if the user is an admin
-            if ($credentials['Email'] === 'Admin@gmail.com' && $credentials['password'] === '123456') {
-                return redirect('/admin');
-            }
-
             return redirect('/home');
         } else {
-            return redirect()->back()->withErrors(['Invalid Email or Password']);
+            return redirect()->back()->withErrors(['Email atau Password Anda Salah']);
         }
     }
+
 
     public function logout(){
         Auth::logout();
         return redirect('/')->with('Berhasil Logout');
     }
+
 }
 

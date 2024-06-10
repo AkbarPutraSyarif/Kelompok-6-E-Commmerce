@@ -46,7 +46,7 @@
         </div>
     </nav>
     <header class="jumbotron text-center">
-        <h1 class="display-4">Welcome to Xhopee</h1>
+        <h1 class="display-4">Welcome to Our E-commerce Site</h1>
         <p class="lead">Find the best products here.</p>
         <a class="btn btn-primary btn-lg" href="#" role="button">Shop Now</a>
     </header>
