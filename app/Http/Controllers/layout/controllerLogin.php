@@ -7,6 +7,8 @@ use App\Models\layout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cookie;
 
 class controllerLogin extends Controller
 {
@@ -22,8 +24,9 @@ class controllerLogin extends Controller
         $request->validate([
             'Email' => 'required|email|min:3|unique:register,Email',
             'password' => 'required',
-            'check-password' => 'required|same:password'
+            'check-password' => 'required|same:password',
         ],[
+
 
             'Email.required'=>'Masukkan email yang Anda miliki',
             'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
@@ -69,4 +72,12 @@ class controllerLogin extends Controller
             return redirect()->back()->withErrors(['Email atau Password Anda Salah']);
         }
     }
+
+
+    public function logout(){
+        Auth::logout();
+        return redirect('/')->with('Berhasil Logout');
+    }
+
 }
+

@@ -35,10 +35,10 @@
             <div class="col-md-6">
                 <h2>{{ $product['name'] }}</h2>
                 <p>Harga : Rp {{ number_format($product['harga'], 0, ',', '.') }}</p>
-                <form action="/order" method="POST">
+                <form action="{{ route('checkout.store') }}" method="POST">
                     @csrf
                     <input type="hidden" name="product_id" value="{{ $product['id'] }}">
-                    <button type="submit" class="btn btn-success">Confirm Purchase</button>
+                    <button type="submit" class="btn btn-primary">Konfirmasi Pembelian</button>
                 </form>
             </div>
         </div>
