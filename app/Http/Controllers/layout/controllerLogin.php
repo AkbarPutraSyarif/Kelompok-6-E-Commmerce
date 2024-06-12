@@ -32,6 +32,7 @@ class controllerLogin extends Controller
             'password.required' => 'Required Field',
             'check-password.required' => 'Required Field',
             'check.password.same' => 'Required Field'
+
         ]);
 
         $data =[
