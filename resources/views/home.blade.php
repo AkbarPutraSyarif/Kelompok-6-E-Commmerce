@@ -11,8 +11,18 @@
     @if (session()->has('success_message'))
     <div class="alert alert-success" role="alert">
         {{ session()->get('success_message') }}
+        @if (session()->has('user_balance'))
+        <p>Your remaining balance is: Rp {{ number_format(session()->get('user_balance'), 0, ',', '.') }}</p>
+        @endif
     </div>
     @endif
+
+    @if (Cookie::has('user_balance'))
+    <div class="alert alert-info" role="alert">
+        <p>Your remaining balance from cookie is: Rp {{ number_format(Cookie::get('user_balance'), 0, ',', '.') }}</p>
+    </div>
+    @endif
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">E-commerce</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,6 +39,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -40,7 +53,7 @@
     <main class="container">
         <section class="products row">
             @foreach($products as $product)
-                <div class="product col-md-2"> <!-- Mengubah col-md-4 menjadi col-md-3 untuk 4 kolom -->
+                <div class="product col-md-2"> 
                     <div class="card mb-4">
                         <img src="{{ asset('img/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">
                         <div class="card-body">

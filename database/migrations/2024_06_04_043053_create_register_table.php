@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('Email')->unique();
             $table->string('password');
+            $table->integer('saldo')->default(1000000);
             $table->string('check-password');
             $table->timestamps();
         });
