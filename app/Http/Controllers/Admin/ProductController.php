@@ -9,6 +9,7 @@ use App\Models\ProductImage;
 use Validator;
 use Str;
 use File;
+use Illuminate\Http\Testing\File as TestingFile;
 
 class ProductController extends Controller
 {
@@ -72,7 +73,7 @@ class ProductController extends Controller
 
 
     public function getImages(Request $request){
-        $data = ProductImage::where('product_id', $request->id_products)->orderByDesc('id')->get();
+        $data = Product::where('product_id', $request->id_products)->orderByDesc('id')->get();
         return response()->json($data);
     }
 
@@ -81,7 +82,7 @@ class ProductController extends Controller
         $imageName = $image->getClientOriginalName();
         $image->move(public_path('shop/products'), $imageName);
 
-        ProductImage::create([
+        Product::create([
             'product_id' => $request->id_product,
             'path' => $imageName
         ]);
@@ -91,7 +92,7 @@ class ProductController extends Controller
 
     public function deleteImages(Request $request){
         $filename = $request->get('filename');
-        ProductImage::where('path', $filename)->delete();
+        Product::where('path', $filename)->delete();
         $paths = public_path().'/shop/products/'. $filename;
         if(file_exists($paths)){
             unlink($paths);
@@ -150,7 +151,7 @@ class ProductController extends Controller
             array_push($dataImage, public_path().'/shop/products/'.$item->path);
         }
 
-        File::delete($dataImage);
+        TestingFile::delete($dataImage);
 
         Product::destroy($id);
         return redirect()->route('products')->with('success', 'Data product deleted');
