@@ -17,7 +17,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/purchase/{id}', [HomeController::class, 'purchase'])->name('purchase');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
-
+Route::get('/products', [HomeController::class, 'showAllProducts'])->name('products.all');
 
 
 
