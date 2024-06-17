@@ -6,11 +6,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CheckoutController;
 
 
+// Route::get('/', function () {
+//     return view('login');
+// });
 
-<<<<<<< HEAD
+// Route::get('/registrasi', function () {
+//     return view('registrasi');
+// });
 
-=======
->>>>>>> e616fbe (Mencoba membuat beranda)
+
 Route::get('/',[controllerLogin::class,'login']);
 Route::post('/', [controllerLogin::class, 'loginPost']) ->name('loginPost');
 Route::get('/registrasi',[controllerLogin::class,'register']);
@@ -26,18 +30,7 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.s
 
 Route::post('/registrasi',[controllerLogin::class,'registerPost']);
 Route::get('/logout', [controllerLogin::class, 'logout']);
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/logout', [controllerLogin::class, 'logout']);
-Route::get('/purchase/{id}', [HomeController::class, 'purchase'])->name('purchase');
-Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
-Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+Route::get('/beranda', [HomeController::class, 'index'])->name('home');
 
 
 
-
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> a0dfb3a (testing beranda)

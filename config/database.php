@@ -86,13 +86,10 @@ return [
             'port' => env('DB_PORT', '5432'),
             'database' => env('DB_DATABASE', 'postgres'),
             'username' => env('DB_USERNAME', 'postgres'),
-<<<<<<< HEAD
             'password' => env('DB_PASSWORD', '123456'),
 
 
-=======
-            'password' => env('DB_PASSWORD', 'password'),
->>>>>>> 5797d59 (test)
+
             'charset' => env('DB_CHARSET', 'utf8'),
             'prefix' => '',
             'prefix_indexes' => true,

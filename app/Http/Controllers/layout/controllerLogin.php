@@ -26,23 +26,13 @@ class controllerLogin extends Controller
             'password' => 'required',
             'check-password' => 'required|same:password',
         ],[
-<<<<<<< HEAD
 
-
-            'Email.required'=>'Masukkan email yang Anda miliki',
-            'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
-            'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
-            'password.required' => 'Masukkan kata sandi yang Anda miliki',
-            'check-password.required' => 'Masukkan juga kata sandi Anda disini',
-            'check.password.same' => 'Kata sandi dan konfirmasi Anda tidak sama'
-=======
             'Email.required'=>'Required Field',
             'Email.min'=>'Minimum of 3 Character',
             'Email.email'=> 'Enter a valid e-mail address',
             'password.required' => 'Required Field',
             'check-password.required' => 'Required Field',
             'check.password.same' => 'Required Field'
->>>>>>> a0dfb3a (testing beranda)
         ]);
 
         $data =[
@@ -62,24 +52,12 @@ class controllerLogin extends Controller
             'Email' => 'required|email|min:3|Email',
             'password' => 'required',
         ],[
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 43925bc (Mengganti error saja)
             'Email.required'=>'Masukkan email yang Anda miliki',
             'Email.min'=>'Email yang Anda masukkan terlalu sedikit (Minimal 3)',
             'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
             'password.required' => 'Masukkan kata sandi yang Anda',
-<<<<<<< HEAD
-=======
-            'Email.required'=>'Required Field',
-            'Email.min'=>'Minimum of 3 Character',
-            'Email.email'=> 'Enter a valid e-mail address',
-            'password.required' => 'Required Field',
->>>>>>> a0dfb3a (testing beranda)
-=======
->>>>>>> 43925bc (Mengganti error saja)
+
         ]);
         $credentials = [
             'Email' => $request->input('Email'),
@@ -91,18 +69,15 @@ class controllerLogin extends Controller
             Auth::login($user);
             return redirect('/home');
         } else {
-<<<<<<< HEAD
 
-            return redirect('/')->with('Gagal', 'password atau email salah');
-=======
             return redirect()->back()->withErrors(['Email atau Password Anda Salah']);
-
->>>>>>> a0dfb3a (testing beranda)
         }
     }
+
     public function logout(){
         Auth::logout();
         return redirect('/')->with('Berhasil Logout');
     }
 
 }
+
