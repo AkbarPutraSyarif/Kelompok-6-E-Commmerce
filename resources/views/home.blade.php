@@ -34,7 +34,7 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Products</a>
+                    <a class="nav-link" href={{ route('products.all') }}>Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
@@ -45,27 +45,11 @@
             </ul>
         </div>
     </nav>
-    <header class="jumbotron text-center">
+    <header class="text-center">
         <h1 class="display-4">Welcome to Our E-commerce Site</h1>
-        <p class="lead">Find the best products here.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Shop Now</a>
+        <p class="lead">Find the best products here.</p> 
+        <a class="btn btn-primary btn-lg" href={{ route('products.all') }} role="button">Shop Now</a>
     </header>
-    <main class="container">
-        <section class="products row">
-            @foreach($products as $product)
-                <div class="product col-md-2"> 
-                    <div class="card mb-4">
-                        <img src="{{ asset('img/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $product->name }}</h5>
-                            <p class="card-text">Harga : Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
-                            <a href="{{ route('purchase', $product->id) }}" class="btn btn-primary">Beli Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </section>
-    </main>
     <footer class="bg-light text-center py-4">
         <p>&copy; 2024 E-commerce. All rights reserved.</p>
     </footer>

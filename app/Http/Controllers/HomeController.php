@@ -45,4 +45,10 @@ class HomeController extends Controller
 
         return redirect()->route('home')->with('success_message', 'Purchase successful!');
     }
+
+    public function showAllProducts()
+    {
+        $products = Product::paginate(8); // Mengatur jumlah produk per halaman
+        return view('products', compact('products'));
+    }
 }
