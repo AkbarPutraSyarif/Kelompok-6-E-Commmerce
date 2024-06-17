@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('register', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('Email')->unique();
-            $table->string('password');
-            $table->string('check-password');
-            $table->integer('saldo')->default(100000);
+
+            $table->string('name');
+            $table->integer('harga');
+            $table->string('image');
+            $table->text('description');
+            $table->integer('stock');
+            $table->date('expired_date');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('register');
+        Schema::dropIfExists('products');
     }
 };
