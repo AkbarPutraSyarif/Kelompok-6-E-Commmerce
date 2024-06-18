@@ -26,9 +26,9 @@ class login extends Controller
             'Email' => 'required|email',
             'password' => 'required',
         ],[
-            'Email.required'=>'Masukkan email yang Anda miliki',
-            'Email.email'=> 'Format email yang Anda masukkan tidak benar, gunakan "@"',
-            'password.required' => 'Masukkan kata sandi yang Anda',
+            'Email.required'=>'Enter your email',
+            'Email.email'=> 'Incorrect Email',
+            'password.required' => 'Password required',
 
         ]);
         $email = $request->input('Email');
@@ -38,7 +38,7 @@ class login extends Controller
             return redirect()->route('admin.dashboard');
         } else {
             return redirect()->route('admin.login')->withErrors([
-                'error' => 'Email atau kata sandi salah',
+                'error' => 'Wrong Email or Password',
             ]);
         }
     }

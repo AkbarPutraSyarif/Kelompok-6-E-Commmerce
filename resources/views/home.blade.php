@@ -42,6 +42,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Logout</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href={{ route('topup.update') }}>Top Up</a>
+                </li>
             </ul>
         </div>
     </nav>
