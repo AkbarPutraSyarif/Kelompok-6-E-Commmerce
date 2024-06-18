@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Register;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Cookie;
@@ -11,8 +12,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
-
+        $products = Product::orderBy('id', 'asc')->get();
         return view('home', compact('products'));
     }
 
@@ -48,7 +48,26 @@ class HomeController extends Controller
 
     public function showAllProducts()
     {
-        $products = Product::paginate(8); // Mengatur jumlah produk per halaman
+        $products = Product::paginate(8);
         return view('products', compact('products'));
+    }
+    //=================================
+    public function showTopUpForm()
+    {
+        return view('topup');
+    }
+
+    public function topUpBalance(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email|exists:register,Email',
+            'amount' => 'required|integer|min:10000',
+        ]);
+
+        $user = Register::where('Email', $request->input('email'))->first();
+        $user->saldo += $request->input('amount');
+        $user->save();
+
+        return redirect()->route('home')->with('success_message', 'Top-up successful!')->with('user_balance', $user->saldo);
     }
 }
