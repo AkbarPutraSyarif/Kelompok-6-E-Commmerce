@@ -13,6 +13,12 @@
         </div>
     @endif
 
+    @if(session('error'))
+        <div class="alert-error">
+            {{ session('error') }}
+        </div>
+    @endif
+
     @if(session('delete'))
         <div class="alert-danger">
             {{ session('delete') }}
