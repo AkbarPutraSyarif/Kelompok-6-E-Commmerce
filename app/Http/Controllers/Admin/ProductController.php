@@ -14,18 +14,6 @@ class ProductController extends Controller
         return view('admin.dashboard', compact('products'));
     }
 
-    public function tampilan(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string',
-            'stock' => 'required|integer'
-        ]);
-
-        Product::create($request->all());
-
-        return redirect()->route('admin.dashboard')->with('success', 'Product added successfully');
-    }
-
     public function updateStock(Request $request, $id)
     {
         $request->validate([
@@ -33,7 +21,11 @@ class ProductController extends Controller
         ]);
 
         $product = Product::findOrFail($id);
-        $product->stock += $request->input('increment');
+        $kurang = $product->stock += $request->input('increment');
+
+        if ($kurang < 0) {
+            return redirect()->route('admin.dashboard')->with('error', 'Stock cannot be negative');
+        }
         $product->save();
 
         return redirect()->route('admin.dashboard')->with('success', 'Stock updated successfully');
