@@ -11,8 +11,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
-
+        $products = Product::orderBy('id', 'asc')->get();
         return view('home', compact('products'));
     }
 
@@ -44,5 +43,11 @@ class HomeController extends Controller
         $product->save();
 
         return redirect()->route('home')->with('success_message', 'Purchase successful!');
+    }
+
+    public function showAllProducts()
+    {
+        $products = Product::paginate(8); // Mengatur jumlah produk per halaman
+        return view('products', compact('products'));
     }
 }
