@@ -28,5 +28,10 @@ Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.in
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 Route::get('/products', [HomeController::class, 'showAllProducts'])->name('products.all');
 
+Route::get('/topup', [HomeController::class, 'showTopUpForm'])->name('topup.update');
+Route::post('/topup', [HomeController::class, 'topUpBalance'])->name('topup');
+
+
+
 
 
