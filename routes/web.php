@@ -19,7 +19,6 @@ Route::get('/loginadmin', [Login::class, 'loginAdmin'])->name('admin.login');
 Route::post('/loginadmin', [Login::class, 'masukDashboard'])->name('admin.login.post');
 
 Route::get('admin/dashboard', [ProductController::class, 'dashboard'])->name('admin.dashboard');
-Route::post('admin/addProduct', [ProductController::class, 'tampilan']);
 Route::patch('admin/updateStock/{id}', [ProductController::class, 'updateStock'])->name('admin.updateStock');
 Route::delete('admin/deleteProduct/{id}', [ProductController::class, 'delete'])->name('admin.deleteProduct');
 

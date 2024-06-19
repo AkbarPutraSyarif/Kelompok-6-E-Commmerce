@@ -61,13 +61,13 @@ class HomeController extends Controller
     {
         $request->validate([
             'email' => 'required|email|exists:register,Email',
-            'amount' => 'required|integer|min:10000',
+            'amount' => 'required|integer|min:50000',
         ]);
 
         $user = Register::where('Email', $request->input('email'))->first();
-        $user->saldo += $request->input('amount');
+        $user->saldo += $request->input('amount') - 10000;
         $user->save();
 
-        return redirect()->route('home')->with('success_message', 'Top-up successful!')->with('user_balance', $user->saldo);
+        return redirect()->route('home')->with('success_message', 'Top-up anda berhasil')->with('user_balance', $user->saldo);
     }
 }
