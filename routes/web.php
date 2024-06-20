@@ -7,16 +7,6 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Admin\Login;
 use App\Http\Controllers\Admin\ProductController;
 
-
-// Route::get('/', function () {
-//     return view('login');
-// });
-
-// Route::get('/registrasi', function () {
-//     return view('registrasi');
-// });
-
-
 Route::get('/',[controllerLogin::class,'login']);
 Route::post('/', [controllerLogin::class, 'loginPost']) ->name('loginPost');
 Route::get('/registrasi',[controllerLogin::class,'register']);
@@ -40,6 +30,8 @@ Route::get('/products', [HomeController::class, 'showAllProducts'])->name('produ
 Route::get('/topup', [HomeController::class, 'showTopUpForm'])->name('topup.update');
 Route::post('/topup', [HomeController::class, 'topUpBalance'])->name('topup');
 
+Route::get('/buatproduk', [ProductController::class, 'buatproduk']);
+Route::post('/buatproduk', [ProductController::class, 'buatprodukController'])->name('admin.buatproduk');
 
 
 

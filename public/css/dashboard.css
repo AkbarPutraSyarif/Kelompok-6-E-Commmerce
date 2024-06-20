@@ -47,7 +47,7 @@ th {
     display: inline-block;
 }
 
-.logout, .beranda {
+.logout, .beranda,.buatproduk {
     border: 1px solid black;
     color: white;
     padding: 10px;
@@ -64,4 +64,8 @@ th {
 
 .beranda {
     background-color: blue;
+}
+
+.buatproduk {
+    background-color: rgb(23, 165, 23);
 }

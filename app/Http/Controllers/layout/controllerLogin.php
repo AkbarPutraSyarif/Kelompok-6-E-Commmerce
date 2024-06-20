@@ -69,7 +69,7 @@ class controllerLogin extends Controller
 
             return redirect('/home');
         } else {
-            return redirect()->back()->withErrors(['Email atau Password Anda Salah']);
+            return redirect()->route('loginPost')->withErrors(['error'=>'Email atau Password Anda Salah']);
 
         }
     }

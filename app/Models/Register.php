@@ -17,7 +17,6 @@ class Register extends Model
         'password',
         'check-password',
         'saldo',
-
     ];
 }
 
