@@ -77,4 +77,6 @@ class controllerLogin extends Controller
         Auth::logout();
         return redirect('/')->with('Berhasil Logout');
     }
+
 }
+

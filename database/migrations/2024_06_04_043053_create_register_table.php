@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('password');
             $table->integer('saldo')->default(1000000);
             $table->string('check-password');
+            $table->integer('saldo')->default(100000);
             $table->timestamps();
         });
     }

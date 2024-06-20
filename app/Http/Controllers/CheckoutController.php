@@ -20,7 +20,7 @@ class CheckoutController extends Controller
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|exists:register,Email',
             'quantity' => 'required|integer|min:1',
-            'product_id' => 'required|exists:products,id', // Validate product ID exists
+            'product_id' => 'required|exists:products,id',
         ]);
 
         if ($validator->fails()) {
@@ -34,7 +34,9 @@ class CheckoutController extends Controller
         $user = Register::where('Email', $request->input('email'))->firstOrFail();
         $totalPrice = $product->harga * $quantity;
 
-        if ($product->stok < $quantity) {
+
+        if ($product->stock < $quantity) {
+
             return redirect()->route('purchase', $product->id)->withErrors(['quantity' => 'Not enough stock available'])->withInput();
         }
 
@@ -42,15 +44,12 @@ class CheckoutController extends Controller
             return redirect()->route('checkout.index')->withErrors(['saldo' => 'Not enough balance'])->withInput();
         }
 
-        // Deduct the quantity from the product's stock
-        $product->stok -= $quantity;
+        $product->stock -= $quantity;
         $product->save();
 
-        // Deduct the total price from the user's balance
         $user->saldo -= $totalPrice;
         $user->save();
 
-        // return redirect()->route('home')->with(['success_message', 'Purchase successful!')'user_balance' => $user->saldo;
         return redirect()->route('home')->with([
             'success_message' => 'Purchase successful!',
             'user_balance' => $user->saldo
