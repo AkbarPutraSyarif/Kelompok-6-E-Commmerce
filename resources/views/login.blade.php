@@ -34,6 +34,9 @@
 
             <div class="submit">
                 <input type="submit" name="Login" value="Login">
+                @if ($errors->has('error'))
+                <div class="error-message">{{ $errors->first('error') }}</div>
+                @endif
             </div>
         </form>
     </div>
