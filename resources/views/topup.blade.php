@@ -25,7 +25,7 @@
                 <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
             </div>
             <div class="form-group">
-                <label for="amount">Minimum Topup: Rp 50.000(Biaya Admin 10000)</label>
+                <label for="amount">Minimum Topup: Rp 50.000,00(Biaya Admin: Rp 10.000,00)</label>
                 <input type="number" class="form-control" id="amount" name="amount" min="50000" required>
             </div>
             <button type="submit" class="btn btn-primary">Top Up</button>
