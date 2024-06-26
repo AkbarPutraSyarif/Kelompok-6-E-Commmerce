@@ -1,0 +1,91 @@
+body {
+    background-color: rgb(38, 101, 38);
+}
+
+.border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-bottom: 0;
+}
+
+.head {
+    font-size: xx-large;
+    text-align: center;
+    color: aqua;
+    text-shadow: 
+        -2px -2px 0 #000,  
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
+}
+
+.input-text, .input-password, .input-check-password {
+    font-size: 20px;
+    font-weight: 1000;
+    color: aqua;
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.input-registrasi, .input-login {
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+a {
+    color: blue;
+}
+
+a:hover {
+    color: red;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 3px solid black;
+    border-radius: 40px;
+}
+
+.border form {
+    border: solid 1px;
+    height: auto; /* Changed from fixed height to auto */
+    width: 50vh;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Added gap for spacing between elements */
+}
+
+.submit {
+    text-align: center;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    width: 100%;
+    background-color: #007BFF;
+    color: #fff;
+    border: solid black;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.error-message {
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    margin-top: 5px;
+    text-shadow: none;
+}
