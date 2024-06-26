@@ -30,7 +30,13 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
-                <img src="{{ asset('img/' . $product['image']) }}" class="img-fluid" alt="{{ $product['name'] }}">
+                @if(Storage::exists($product->image))
+                    <img src="{{ Storage::url($product->image) }}" class="img-fluid" alt="{{ $product->name }}">
+                @elseif(file_exists(public_path('img/' . $product->image)))
+                    <img src="{{ asset('img/' . $product->image) }}" class="img-fluid" alt="{{ $product->name }}">
+                @else
+                <img src="{{ Storage::url($product->image) }}" class="img-fluid" alt="{{ $product->name }}">
+                @endif
             </div>
             <div class="col-md-6">
                 <h2>{{ $product['name'] }}</h2>
