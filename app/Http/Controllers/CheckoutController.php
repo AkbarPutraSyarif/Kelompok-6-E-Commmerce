@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Register;
 use App\Models\Product;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Cookie;
 
 class CheckoutController extends Controller
 {
@@ -34,19 +33,23 @@ class CheckoutController extends Controller
         $user = Register::where('Email', $request->input('email'))->firstOrFail();
         $totalPrice = $product->harga * $quantity;
 
-
         if ($product->stock < $quantity) {
-
-            return redirect()->route('purchase', $product->id)->withErrors(['quantity' => 'Not enough stock available'])->withInput();
+            return redirect()->route('purchase', $product->id)
+                ->withErrors(['quantity' => 'Not enough stock available'])
+                ->withInput();
         }
 
         if ($user->saldo < $totalPrice) {
-            return redirect()->route('checkout.index')->withErrors(['saldo' => 'Not enough balance'])->withInput();
+            return redirect()->route('checkout.index')
+                ->withErrors(['saldo' => 'Not enough balance'])
+                ->withInput();
         }
 
+        // Deduct the product stock
         $product->stock -= $quantity;
         $product->save();
 
+        // Deduct user's balance
         $user->saldo -= $totalPrice;
         $user->save();
 
