@@ -34,7 +34,9 @@ class CheckoutController extends Controller
         $user = Register::where('Email', $request->input('email'))->firstOrFail();
         $totalPrice = $product->harga * $quantity;
 
+
         if ($product->stock < $quantity) {
+
             return redirect()->route('purchase', $product->id)->withErrors(['quantity' => 'Not enough stock available'])->withInput();
         }
 

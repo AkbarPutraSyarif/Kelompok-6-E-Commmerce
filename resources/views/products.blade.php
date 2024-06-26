@@ -6,7 +6,6 @@
     <title>All Products</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -17,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
@@ -39,7 +38,7 @@
             @endforeach
         </div>
         <div class="d-flex justify-content-center">
-            {{ $products->links() }} <!-- Pagination links -->
+            {{ $products->links() }} 
         </div>
     </div>
 
