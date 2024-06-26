@@ -19,3 +19,4 @@ class Register extends Model
         'saldo',
     ];
 }
+

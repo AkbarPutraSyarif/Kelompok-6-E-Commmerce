@@ -1,0 +1,71 @@
+.alert-success {
+    border: 2px solid green;
+    background-color: #d4edda;
+    color: green;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.alert-danger {
+    border: 2px solid black;
+    background-color: rgb(252, 89, 89);
+    color: black;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.alert-error {
+    border: 2px solid black;
+    background-color: rgb(252, 89, 89);
+    color: black;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.form-inline {
+    display: inline-block;
+}
+
+.logout, .beranda,.buatproduk {
+    border: 1px solid black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    width: 100px; 
+}
+
+
+.logout {
+    background-color: red;
+}
+
+.beranda {
+    background-color: blue;
+}
+
+.buatproduk {
+    background-color: rgb(23, 165, 23);
+}

@@ -1,8 +1,5 @@
 body {
-    background-image: url('/img/OniJapanese.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: rgb(38, 101, 38);
 }
 
 .border {
