@@ -42,6 +42,7 @@
                 <h2>{{ $product['name'] }}</h2>
                 <p>Harga : Rp {{ number_format($product['harga'], 0, ',', '.') }}</p>
                 <p>Stok Barang : {{ number_format($product['stock']) }}</p>
+                <p>Deskripsi: {{ $product->description }}</p>
                 <p>Tanggal Kadaluarsa : {{ \Carbon\Carbon::parse($product->expired_date)->format('d M Y') }}</p>
                 <form action="{{ route('checkout.store') }}" method="POST">
                     @csrf
