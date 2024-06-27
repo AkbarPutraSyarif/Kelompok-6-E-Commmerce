@@ -18,6 +18,11 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
+                <form action="{{ route('search') }}" method="GET" class="form-inline my-2 my-lg-0">
+                    @csrf
+                    <input class="form-control mr-sm-2" type="search" placeholder="Cari produk..." aria-label="Search" name="query">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cari</button>
+                </form>
             </ul>
         </div>
     </nav>
@@ -27,7 +32,13 @@
             @foreach($products as $product)
                 <div class="col-md-3 mb-4">
                     <div class="card">
-                        <img src="{{ asset('img/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">
+                        @if(Storage::exists($product->image))
+                            <img src="{{ Storage::url($product->image) }}" class="card-img-top" alt="{{ $product->name }}">
+                        @elseif(file_exists(public_path('img/' . $product->image)))
+                            <img src="{{ asset('img/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">
+                        @else
+                            <img src="{{ Storage::url($product->image) }}" class="card-img-top" alt="{{ $product->name }}">
+                        @endif
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->name }}</h5>
                             <p class="card-text">Harga : Rp {{ number_format($product->harga, 0, ',', '.') }}</p>

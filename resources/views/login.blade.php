@@ -8,7 +8,10 @@
 </head>
 <body>
     <div class="border">
-        <form action="" method= "post">
+            <div class="loginadmin">
+                <a href="/loginadmin">Admin</a>
+            </div>
+            <form action="" method= "post">
             @csrf
             <div class="head"><b>Login</b></div>
             <div class="input-text">

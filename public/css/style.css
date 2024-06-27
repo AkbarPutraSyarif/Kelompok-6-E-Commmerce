@@ -55,7 +55,7 @@ input[type="text"], input[type="password"] {
 
 .border form {
     border: solid 1px;
-    height: auto; /* Changed from fixed height to auto */
+    height: auto; 
     width: 50vh;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(6px);
@@ -64,7 +64,7 @@ input[type="text"], input[type="password"] {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Added gap for spacing between elements */
+    gap: 10px; 
 }
 
 .submit {
@@ -88,4 +88,38 @@ input[type="submit"] {
     font-size: 14px;
     margin-top: 5px;
     text-shadow: none;
+}
+
+.loginadmin {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 2px solid #000;
+    border-radius: 40px;
+    background-color: #007BFF;
+    padding: 10px;
+}
+
+.loginadmin a {
+    color: aqua;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.login {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 2px solid #000;
+    border-radius: 40px;
+    background-color: #007BFF;
+    padding: 10px;
+}
+
+.login a {
+    color: aqua;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
 }
