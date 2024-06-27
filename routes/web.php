@@ -23,6 +23,7 @@ Route::delete('admin/deleteProduct/{id}', [ProductController::class, 'delete'])-
 Route::patch('admin/updatePrice/{id}', [ProductController::class, 'updatePrice'])->name('admin.price');
 Route::get('admin/account', [account::class, 'index'])->name('admin.account');
 Route::delete('admin/account/{id}', [account::class, 'delete'])->name('admin.deleteAccount');
+Route::get('/contact', [account::class, 'contact'])->name('contact');
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -40,3 +41,4 @@ Route::post('/buatproduk', [ProductController::class, 'buatprodukController'])->
 
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 Route::get('/sort', [HomeController::class, 'sort'])->name('sort');
+

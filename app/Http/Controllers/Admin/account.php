@@ -21,4 +21,9 @@ class account extends Controller
 
         return redirect()->route('admin.account')->with('delete', 'Account deleted successfully');
     }
+
+    public function contact()
+    {
+        return view('contact');
+    }
 }
