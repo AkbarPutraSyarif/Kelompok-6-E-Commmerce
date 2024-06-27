@@ -8,6 +8,9 @@
 </head>
 <body>
     <div class="border">
+        <div class="login">
+                <a href="/">Balik</a>
+            </div>
         <form action="" method= "post">
             @csrf
             <div class="head"><b>Admin</b></div>

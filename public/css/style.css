@@ -89,3 +89,37 @@ input[type="submit"] {
     margin-top: 5px;
     text-shadow: none;
 }
+
+.loginadmin {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 2px solid #000;
+    border-radius: 40px;
+    background-color: #007BFF;
+    padding: 10px;
+}
+
+.loginadmin a {
+    color: aqua;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.login {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 2px solid #000;
+    border-radius: 40px;
+    background-color: #007BFF;
+    padding: 10px;
+}
+
+.login a {
+    color: aqua;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}

@@ -27,7 +27,13 @@
             @foreach($products as $product)
                 <div class="col-md-3 mb-4">
                     <div class="card">
-                        <img src="{{ asset('img/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">
+                        @if(Storage::exists($product->image))
+                            <img src="{{ Storage::url($product->image) }}" class="card-img-top" alt="{{ $product->name }}">
+                        @elseif(file_exists(public_path('img/' . $product->image)))
+                            <img src="{{ asset('img/' . $product->image) }}" class="card-img-top" alt="{{ $product->name }}">
+                        @else
+                            <img src="{{ Storage::url($product->image) }}" class="card-img-top" alt="{{ $product->name }}">
+                        @endif
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->name }}</h5>
                             <p class="card-text">Harga : Rp {{ number_format($product->harga, 0, ',', '.') }}</p>
