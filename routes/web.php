@@ -7,6 +7,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Admin\Login;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\account;
+use App\Http\Controllers\ContactController;
 
 Route::get('/',[controllerLogin::class,'login']);
 Route::post('/', [controllerLogin::class, 'loginPost']) ->name('loginPost');
@@ -42,3 +43,8 @@ Route::post('/buatproduk', [ProductController::class, 'buatprodukController'])->
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 Route::get('/sort', [HomeController::class, 'sort'])->name('sort');
 
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
