@@ -19,7 +19,7 @@
                     <a class="nav-link" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Products</a>
+                    <a class="nav-link" href="{{ route('products.all') }}">Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
@@ -41,6 +41,8 @@
             <div class="col-md-6">
                 <h2>{{ $product['name'] }}</h2>
                 <p>Harga : Rp {{ number_format($product['harga'], 0, ',', '.') }}</p>
+                <p>Stok Barang : {{ number_format($product['stock']) }}</p>
+                <p>Tanggal Kadaluarsa : {{ \Carbon\Carbon::parse($product->expired_date)->format('d M Y') }}</p>
                 <form action="{{ route('checkout.store') }}" method="POST">
                     @csrf
                     <input type="hidden" name="product_id" value="{{ $product['id'] }}">
