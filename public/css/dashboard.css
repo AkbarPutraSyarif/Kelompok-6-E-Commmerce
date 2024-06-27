@@ -47,7 +47,7 @@ th {
     display: inline-block;
 }
 
-.logout, .beranda,.buatproduk {
+.logout, .beranda,.buatproduk,.account, .Menu {
     border: 1px solid black;
     color: white;
     padding: 10px;
@@ -68,4 +68,12 @@ th {
 
 .buatproduk {
     background-color: rgb(23, 165, 23);
+}
+
+.account {
+    background-color: #eda51e;
+}
+.Menu {
+    background-color: rgb(241, 74, 74);
+    margin-left: 190px;
 }

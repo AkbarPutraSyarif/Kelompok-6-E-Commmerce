@@ -65,6 +65,7 @@
         <a class="logout" href="{{ url('/loginadmin') }}">Logout</a>
         <a class="beranda" href="{{ url('/home') }}">Beranda</a>
         <a class="buatproduk" href="{{ url('/buatproduk') }}">BuatProduk</a>
+        <a class="account" href="{{ route('admin.account') }}">ManageAcc</a>
     </div>
 </body>
 </html>

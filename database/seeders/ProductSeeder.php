@@ -87,5 +87,14 @@ class ProductSeeder extends Seeder
             'expired_date' => '2025-01-01',
 
         ]);
+        Product::create([
+            'name' => 'Beng Beng',
+            'harga' => 6000,
+            'image' => 'Barang9.jpg',
+            'description' => 'a choco-combo snack, that offers multi-elements of delightful ingredients – chocolate, caramel, crispies & wafer',
+            'stock' => 100,
+            'expired_date' => '2025-01-01',
+
+        ]);
     }
 }

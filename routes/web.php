@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Admin\Login;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\account;
 
 Route::get('/',[controllerLogin::class,'login']);
 Route::post('/', [controllerLogin::class, 'loginPost']) ->name('loginPost');
@@ -19,6 +20,9 @@ Route::post('/loginadmin', [Login::class, 'masukDashboard'])->name('admin.login.
 Route::get('admin/dashboard', [ProductController::class, 'dashboard'])->name('admin.dashboard');
 Route::patch('admin/updateStock/{id}', [ProductController::class, 'updateStock'])->name('admin.updateStock');
 Route::delete('admin/deleteProduct/{id}', [ProductController::class, 'delete'])->name('admin.deleteProduct');
+Route::get('admin/account', [account::class, 'index'])->name('admin.account');
+Route::delete('admin/account/{id}', [account::class, 'delete'])->name('admin.deleteAccount');
+
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/purchase/{id}', [HomeController::class, 'purchase'])->name('purchase');
@@ -34,6 +38,3 @@ Route::get('/buatproduk', [ProductController::class, 'buatproduk']);
 Route::post('/buatproduk', [ProductController::class, 'buatprodukController'])->name('admin.buatproduk');
 
 Route::get('/search', [HomeController::class, 'search'])->name('search');
-
-
-
