@@ -23,18 +23,6 @@
                     <input class="form-control mr-sm-2" type="search" placeholder="Cari produk..." aria-label="Search" name="query">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cari</button>
                 </form>
-                <li class="nav-item">
-                    <form action="{{ route('sort') }}" method="GET" class="form-inline my-2 my-lg-0 ml-3">
-                        <select name="sort" class="form-control" onchange="this.form.submit()">
-                            <option value="">Sort by</option>
-                            <option value="name_asc">Name(A-Z)</option>
-                            <option value="name_desc">Name(Z-A)</option>
-                            <option value="price_asc">Harga⭡</option>
-                            <option value="price_desc">Harga⭣</option>
-
-                        </select>
-                    </form>
-                </li>
             </ul>
         </div>
     </nav>
