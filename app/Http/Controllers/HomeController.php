@@ -88,7 +88,7 @@ class HomeController extends Controller
     ]);
 }
 
-    public function search(Request $request)
+public function search(Request $request)
 {
     $search = $request->input('query');
     $testlower = strtolower($search);
@@ -109,7 +109,8 @@ public function sort(Request $request)
         $products = Product::orderBy('harga', 'asc')->paginate(12);
     } else {
         $products = Product::paginate(8);
-        return view('products', compact('products'));
-        }
-    }  
+    }
+
+    return view('products', compact('products'));
+}
 }
