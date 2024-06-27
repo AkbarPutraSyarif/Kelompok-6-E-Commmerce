@@ -33,6 +33,7 @@ Route::post('/topup', [HomeController::class, 'topUpBalance'])->name('topup');
 Route::get('/buatproduk', [ProductController::class, 'buatproduk']);
 Route::post('/buatproduk', [ProductController::class, 'buatprodukController'])->name('admin.buatproduk');
 
+Route::get('/search', [HomeController::class, 'search'])->name('search');
 
 
 
