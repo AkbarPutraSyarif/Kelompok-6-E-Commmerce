@@ -7,8 +7,6 @@ use App\Models\layout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Cookie;
 
 class controllerLogin extends Controller
 {
@@ -23,15 +21,16 @@ class controllerLogin extends Controller
     public function registerPost(Request $request){
         $request->validate([
             'Email' => 'required|email|min:3|unique:register,Email',
-            'password' => 'required',
+            'password' => 'required|min:3',
             'check-password' => 'required|same:password',
         ],[
             'Email.required'=>'Required Field',
             'Email.min'=>'Minimum of 3 Character',
             'Email.email'=> 'Enter a valid e-mail address',
             'password.required' => 'Required Field',
+            'password.min' => 'Minimum of 3 Character',
             'check-password.required' => 'Required Field',
-            'check.password.same' => 'Required Field'
+            'check.password.same' => 'check password and password must the be same'
 
         ]);
 
@@ -79,4 +78,3 @@ class controllerLogin extends Controller
     }
 
 }
-

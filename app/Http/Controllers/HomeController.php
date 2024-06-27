@@ -6,7 +6,7 @@ use App\Models\Product;
 use App\Models\Register;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -58,18 +58,36 @@ class HomeController extends Controller
     }
 
     public function topUpBalance(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email|exists:register,Email',
-            'amount' => 'required|integer|min:50000',
-        ]);
+{
+    $validator = Validator::make($request->all(), [
+        'email' => 'required|email|exists:register,Email',
+        'password' => 'required',
+        'amount' => 'required|integer|min:50000',
+    ]);
 
-        $user = Register::where('Email', $request->input('email'))->first();
-        $user->saldo += $request->input('amount') - 10000;
-        $user->save();
-
-        return redirect()->route('home')->with('success_message', 'Top-up anda berhasil')->with('user_balance', $user->saldo);
+    if ($validator->fails()) {
+        return redirect()->route('topup')
+            ->withErrors($validator)
+            ->withInput();
     }
+
+    $user = Register::where('Email', $request->input('email'))->first();
+
+    if (!$user || !Hash::check($request->input('password'), $user->password)) {
+        return redirect()->route('topup')
+            ->withErrors(['email' => 'Email atau password tidak sesuai'])
+            ->withInput();
+    }
+
+
+    $user->saldo += $request->input('amount') - 10000;
+    $user->save();
+
+    return redirect()->route('home')->with([
+        'success_message' => 'Top-up berhasil',
+        'user_balance' => $user->saldo
+    ]);
+}
 
     public function search(Request $request)
     {
