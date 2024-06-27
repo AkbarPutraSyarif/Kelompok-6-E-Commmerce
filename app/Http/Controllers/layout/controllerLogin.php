@@ -37,7 +37,6 @@ class controllerLogin extends Controller
         $data =[
             'Email' => $request->input('Email'),
             'password' => bcrypt($request->input('password')),
-            'check-password' => bcrypt($request->input('check-password'))
         ];
 
         layout::create($data);
