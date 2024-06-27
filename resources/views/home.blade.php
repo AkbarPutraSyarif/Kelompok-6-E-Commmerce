@@ -40,10 +40,10 @@
                     <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</a>
+                    <a class="nav-link" href={{ route('topup.update') }}>Top Up</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href={{ route('topup.update') }}>Top Up</a>
+                    <a class="nav-link" href="/logout">Logout</a>
                 </li>
             </ul>
         </div>
