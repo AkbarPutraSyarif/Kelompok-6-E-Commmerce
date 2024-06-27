@@ -51,7 +51,6 @@ class HomeController extends Controller
         $products = Product::paginate(8);
         return view('products', compact('products'));
     }
-    //=================================
     public function showTopUpForm()
     {
         return view('topup');
@@ -90,12 +89,27 @@ class HomeController extends Controller
 }
 
     public function search(Request $request)
-    {
-        $search = $request->input('query'); 
-        
-        $products = Product::where('name', 'LIKE', "%$search%")->paginate(8); 
-        
-        return view('products', compact('products'));
-    }
+{
+    $search = $request->input('query');
+    $testlower = strtolower($search);
+    $products = Product::whereRaw('LOWER(name) LIKE ?', ["%$testlower%"])->paginate(4);
+    return view('products', compact('products'));
+}
+public function sort(Request $request)
+{
+    $sort = $request->input('sort');
 
+    if ($sort == 'name_asc') {
+        $products = Product::orderBy('name', 'asc')->paginate(12);
+    } elseif ($sort == 'name_desc') {
+        $products = Product::orderBy('name', 'desc')->paginate(12);
+    } elseif ($sort == 'price_desc') {
+        $products = Product::orderBy('harga', 'desc')->paginate(12);
+    } elseif ($sort == 'price_asc') {
+        $products = Product::orderBy('harga', 'asc')->paginate(12);
+    } else {
+        $products = Product::paginate(8);
+        return view('products', compact('products'));
+        }
+    }  
 }

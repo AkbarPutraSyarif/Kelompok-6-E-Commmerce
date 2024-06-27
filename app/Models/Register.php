@@ -15,7 +15,6 @@ class Register extends Model
     protected $fillable = [
         'Email',
         'password',
-        'check-password',
         'saldo',
     ];
 }
