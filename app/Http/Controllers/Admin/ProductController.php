@@ -24,12 +24,32 @@ class ProductController extends Controller
         $kurang = $product->stock += $request->input('increment');
 
         if ($kurang < 0) {
-            return redirect()->route('admin.dashboard')->with('error', 'Stock cannot be negative');
+            return redirect()->route('admin.dashboard')->with('error', 'Tidak boleh dibawah 0');
         }
         $product->save();
 
         return redirect()->route('admin.dashboard')->with('success', 'Stock updated successfully');
     }
+
+    public function updatePrice(Request $request, $id)
+    {
+        $request->validate([
+            'harga' => 'required|integer',
+        ]);
+    
+        $product = Product::findOrFail($id);
+        $newPrice = $product->harga + $request->input('harga');
+    
+        if ($newPrice < 0) {
+            return redirect()->route('admin.dashboard')->with('error', 'Tidak boleh dibawah 0');
+        }
+    
+        $product->harga = $newPrice;
+        $product->save();
+    
+        return redirect()->route('admin.dashboard')->with('success', 'Price updated successfully');
+    }
+    
 
     public function delete($id)
     {
@@ -73,3 +93,4 @@ class ProductController extends Controller
         return redirect()->route('admin.dashboard')->with('success', 'Product added successfully');
     }
 }
+

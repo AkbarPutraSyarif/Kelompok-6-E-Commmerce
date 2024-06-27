@@ -20,6 +20,7 @@ Route::post('/loginadmin', [Login::class, 'masukDashboard'])->name('admin.login.
 Route::get('admin/dashboard', [ProductController::class, 'dashboard'])->name('admin.dashboard');
 Route::patch('admin/updateStock/{id}', [ProductController::class, 'updateStock'])->name('admin.updateStock');
 Route::delete('admin/deleteProduct/{id}', [ProductController::class, 'delete'])->name('admin.deleteProduct');
+Route::patch('admin/updatePrice/{id}', [ProductController::class, 'updatePrice'])->name('admin.price');
 Route::get('admin/account', [account::class, 'index'])->name('admin.account');
 Route::delete('admin/account/{id}', [account::class, 'delete'])->name('admin.deleteAccount');
 
