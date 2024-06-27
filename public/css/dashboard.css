@@ -1,3 +1,4 @@
+
 .alert-success {
     border: 2px solid green;
     background-color: #d4edda;
@@ -26,7 +27,7 @@
 }
 
 table {
-    width: 50%;
+    width: 60%;
     border-collapse: collapse;
 }
 

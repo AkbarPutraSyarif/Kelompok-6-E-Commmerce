@@ -31,6 +31,7 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Price</th>
                 <th>Stock</th>
                 <th>Actions</th>
             </tr>
@@ -40,6 +41,7 @@
                 <tr>
                     <td>{{ $product->id }}</td>
                     <td>{{ $product->name }}</td>
+                    <td>{{ $product->harga }}</td> <!-- Display price -->
                     <td>{{ $product->stock }}</td>
                     <td>
                         <form class="form-inline" action="{{ route('admin.updateStock', $product->id) }}" method="POST">
@@ -48,11 +50,17 @@
                             <input type="number" name="increment" required>
                             <button type="submit">Update Stock</button>
                         </form>
+                        <form class="form-inline" action="{{ route('admin.price', $product->id) }}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <input type="number" name="harga" required>
+                            <button type="submit">Update Price</button>
+                        </form>
+                        
                         <form class="form-inline" action="{{ route('admin.deleteProduct', $product->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit">Delete</button>
-                            
                         </form>
                     </td>
                 </tr>
@@ -69,3 +77,4 @@
     </div>
 </body>
 </html>
+
