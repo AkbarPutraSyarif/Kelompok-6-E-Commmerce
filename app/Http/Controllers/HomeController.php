@@ -70,4 +70,14 @@ class HomeController extends Controller
 
         return redirect()->route('home')->with('success_message', 'Top-up anda berhasil')->with('user_balance', $user->saldo);
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('query'); 
+        
+        $products = Product::where('name', 'LIKE', "%$search%")->paginate(8); 
+        
+        return view('products', compact('products'));
+    }
+
 }
