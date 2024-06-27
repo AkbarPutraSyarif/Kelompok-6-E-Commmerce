@@ -1,10 +1,10 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -37,5 +37,39 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect()->route('admin.dashboard')->with('delete', 'Product deleted successfully');
+    }
+    
+    public function buatproduk()
+    {
+        return view('admin.buatproduk');
+    }
+
+    public function buatprodukController(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:25',
+            'harga' => 'required|integer|min:1000',
+            'image' => 'required|mimes:jpeg,png,jpg|max:2048',
+            'description' => 'required|string',
+            'stock' => 'required|integer|min:1',
+            'expired_date' => 'required|date',
+        ]);
+
+        $img = $request->file('image');
+        $file=date('Y-m-d').$img->getClientOriginalName();
+        $path = 'gambar/'.$file;
+
+        Storage::disk('public')->put($path,file_get_contents($img));
+        
+        Product::create([
+            'name' => $request->input('name'),
+            'harga' => $request->input('harga'),
+            'image' => $path, 
+            'description' => $request->input('description'),
+            'stock' => $request->input('stock'),
+            'expired_date' => $request->input('expired_date'),
+        ]);
+
+        return redirect()->route('admin.dashboard')->with('success', 'Product added successfully');
     }
 }

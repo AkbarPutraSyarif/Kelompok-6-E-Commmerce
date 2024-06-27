@@ -52,6 +52,7 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit">Delete</button>
+                            
                         </form>
                     </td>
                 </tr>
@@ -63,6 +64,7 @@
     <div class="button-container">
         <a class="logout" href="{{ url('/loginadmin') }}">Logout</a>
         <a class="beranda" href="{{ url('/home') }}">Beranda</a>
+        <a class="buatproduk" href="{{ url('/buatproduk') }}">BuatProduk</a>
     </div>
 </body>
 </html>

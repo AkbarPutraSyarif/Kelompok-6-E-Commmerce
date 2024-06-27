@@ -1,8 +1,5 @@
 body {
-    background-image: url('/img/OniJapanese.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: rgb(38, 101, 38);
 }
 
 .border {
@@ -91,4 +88,38 @@ input[type="submit"] {
     font-size: 14px;
     margin-top: 5px;
     text-shadow: none;
+}
+
+.loginadmin {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 2px solid #000;
+    border-radius: 40px;
+    background-color: #007BFF;
+    padding: 10px;
+}
+
+.loginadmin a {
+    color: aqua;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.login {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 2px solid #000;
+    border-radius: 40px;
+    background-color: #007BFF;
+    padding: 10px;
+}
+
+.login a {
+    color: aqua;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
 }
