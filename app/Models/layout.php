@@ -9,5 +9,6 @@ class layout extends Authenticatable
 {
     use HasFactory;
     protected $table = "register";
-    protected $fillable = ["Email", "password","check-password"];
+    protected $fillable = ["Email", "password"];
+    
 }
