@@ -55,7 +55,7 @@ input[type="text"], input[type="password"] {
 
 .border form {
     border: solid 1px;
-    height: auto; /* Changed from fixed height to auto */
+    height: auto; 
     width: 50vh;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(6px);
@@ -64,7 +64,7 @@ input[type="text"], input[type="password"] {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Added gap for spacing between elements */
+    gap: 10px; 
 }
 
 .submit {
